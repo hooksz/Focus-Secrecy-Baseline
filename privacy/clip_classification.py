@@ -84,3 +84,46 @@ def save_logreg_results(args, sentences, predictions, queries_text):
     print()
     total_acc = len([c for c in total_crct if c == True])/len(total_crct)
     cls2acc['total'] = total_acc
+    print(f"Total: {total_acc}, for {len(total_crct)} examples.")
+
+    if not os.path.exists(f"results_prompting/{args.dataset}/"):
+        os.makedirs(f"results_prompting/{args.dataset}/")
+    with open(f"results_prompting/{args.dataset}/{args.clip_method}_{args.model}_example2preds.json", "w") as f:
+        json.dump(example2pred, f)
+    with open(f"results_prompting/{args.dataset}/{args.clip_method}_{args.model}_cls2acc.json", "w") as f:
+        json.dump(cls2acc, f)
+
+
+def get_dataset_embeddings(args, dataloader, model, split="test"):
+    # File paths
+    embeddings_dir = f"{args.embeddings_dir}/{args.dataset}/"
+    embedding_fname = f'd={args.dataset}-s={split}-m={args.model}-seed={args.seed}.pt'
+    embedding_path = os.path.join(embeddings_dir, embedding_fname)
+
+    # Load existing embeddings
+    if os.path.exists(embedding_path):
+        print(f'-> Retrieving image embeddings from {embedding_path}!')
+        embeddings = torch.load(embedding_path)
+        sentences = prepare_data(dataloader)
+        return torch.load(embedding_path), sentences
+
+    # Compute the dataset embeddings now
+    all_embeddings = []
+    model.to(args.device)
+    model.eval()
+    count = 0
+    with torch.no_grad():
+        sentences = []
+        for ix, data in enumerate(tqdm(dataloader, 
+                                       desc=f'Computing CLIP image embeddings for {split} split')):
+
+            if args.dataset != "cifar10":
+                inputs, labels, fpath, data_ix = data
+            else:
+                inputs, labels = data
+            inputs = inputs.to(args.device)
+            labels = labels.to(args.device)
+
+            embeddings = model.encode_image(inputs).float().cpu()
+            all_embeddings.append(embeddings)
+            inputs = inputs.cpu()
