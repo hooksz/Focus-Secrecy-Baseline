@@ -173,3 +173,56 @@ def save_results(args, sentences, predictions, queries_text):
         gold = sentence['gold']
         gold = int(gold)
         correct[gold].append(gold == pred)
+
+        example2pred[i] = {
+            "pred": queries_text[pred],
+            "gold": queries_text[gold],
+            "input": sentence["imgpath"]
+        }
+
+    total_crct = []
+    cls2acc = {}
+    for key, value in correct.items():
+        label_name = queries_text[key]
+        total_crct.extend(value)
+        acc = len([c for c in value if c == True])/len(value)
+        cls2acc[label_name] = acc
+        print(f"Label: {label_name}, Accuracy: {acc}, for {len(value)} examples.")
+    print()
+    total_acc = len([c for c in total_crct if c == True])/len(total_crct)
+    cls2acc['total'] = total_acc
+    print(f"Total: {total_acc}, for {len(total_crct)} examples.")
+
+    if not os.path.exists(f"results_prompting/{args.dataset}/"):
+        os.makedirs(f"results_prompting/{args.dataset}/")
+    with open(f"results_prompting/{args.dataset}/{args.clip_method}_example2preds.json", "w") as f:
+        json.dump(example2pred, f)
+    with open(f"results_prompting/{args.dataset}/{args.clip_method}_cls2acc.json", "w") as f:
+        json.dump(cls2acc, f)
+
+
+def argmax(iterable):
+    return max(enumerate(iterable), key=lambda x: x[1])[0]
+
+def run_image_similarity_classification(args, model, dataset, train_dataset):
+    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, pin_memory=True, timeout=60, num_workers=1, drop_last=False)
+    dataset_embeddings, sentences = get_dataset_embeddings(args, dataloader, model, split=dataset.split)
+
+    if args.clip_method == "zeroshot":  
+        queries_text = dataset.index2label
+        candidate_captions = [v for k, v in queries_text.items()]
+        predictions = classify_embeddings(model, dataset_embeddings, candidate_captions, args) 
+        save_results(args, sentences, predictions, queries_text)   
+
+    elif args.clip_method == "logreg":
+        train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=False, pin_memory=True, timeout=60, num_workers=1, drop_last=False)
+        train_dataset_embeddings, train_sentences = get_dataset_embeddings(args, train_dataloader, model, split=train_dataset.split)
+        predictions = logreg(train_dataset_embeddings, train_sentences, dataset_embeddings) 
+        queries_text = dataset.index2label
+        save_logreg_results(args, sentences, predictions, queries_text)
+        
+
+      
+
+    
+    
