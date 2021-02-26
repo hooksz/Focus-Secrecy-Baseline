@@ -127,3 +127,49 @@ def get_dataset_embeddings(args, dataloader, model, split="test"):
             embeddings = model.encode_image(inputs).float().cpu()
             all_embeddings.append(embeddings)
             inputs = inputs.cpu()
+            labels = labels.cpu()
+
+            for i in range(inputs.shape[0]):
+                # label_name = dataset.target2name_map[label]
+                if args.dataset != "cifar10":
+                    entry = { "exidx": int(data_ix[i]), "gold": int(labels[i]), "imgpath": fpath[i]}
+                else:
+                    entry = { "exidx": count, "gold": int(labels[i]), "imgpath": ""}
+                    count += 1
+                sentences.append(entry)
+    model.cpu()
+    
+    # Save to disk
+    if not os.path.exists(embeddings_dir):
+        os.makedirs(embeddings_dir)
+    torch.save(torch.cat(all_embeddings), embedding_path)
+    print(f'-> Saved embeddings to {embedding_path}!')
+    return torch.cat(all_embeddings), sentences
+
+
+def prepare_data(dataloader):
+    sentences = []
+    count = 0
+    for bix, data in tqdm(enumerate(dataloader)):
+        for i in range(len(data[0])):
+            input = data[0][i]
+            label = data[1][i]
+            if len(data) > 2:
+                fpath = data[2][i]
+                exidx = data[3][i]
+            else:
+                exidx = count
+                count += 1
+                fpath = ""
+            entry = { "exidx": exidx, "gold": label, "imgpath":fpath}
+            sentences.append(entry)
+    return sentences
+
+
+def save_results(args, sentences, predictions, queries_text):
+    correct = defaultdict(list)
+    example2pred = {}
+    for i,(sentence, pred) in enumerate(zip(sentences, predictions)):
+        gold = sentence['gold']
+        gold = int(gold)
+        correct[gold].append(gold == pred)
