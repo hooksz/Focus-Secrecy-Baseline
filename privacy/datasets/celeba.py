@@ -4,4 +4,5 @@ from PIL import Image
 import os
 import os.path
 import csv
-from torc
+from torchvision import transforms
+from tqdm 
