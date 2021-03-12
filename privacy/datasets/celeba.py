@@ -5,4 +5,7 @@ import os
 import os.path
 import csv
 from torchvision import transforms
-from tqdm 
+from tqdm import tqdm
+import json
+
+class CelebA():
