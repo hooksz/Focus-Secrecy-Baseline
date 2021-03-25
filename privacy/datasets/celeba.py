@@ -9,3 +9,8 @@ from tqdm import tqdm
 import json
 
 class CelebA():
+
+    classes = []
+
+    @property
+    def train_la
