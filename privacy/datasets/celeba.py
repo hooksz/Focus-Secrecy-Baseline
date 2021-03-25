@@ -13,4 +13,5 @@ class CelebA():
     classes = []
 
     @property
-    def train_la
+    def train_labels(self):
+        warnings.warn("train_
