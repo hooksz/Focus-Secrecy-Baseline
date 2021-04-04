@@ -15,4 +15,7 @@ class CelebA():
     @property
     def train_labels(self):
         warnings.warn("train_labels has been renamed targets")
-        return self.t
+        return self.targets
+
+    @property
+    def test_labels(self):
