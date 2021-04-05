@@ -23,3 +23,5 @@ class CelebA():
         return self.targets
 
     @property
+    def train_data(self):
+        warnings.warn("train_data h
