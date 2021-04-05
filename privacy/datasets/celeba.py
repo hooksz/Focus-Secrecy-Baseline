@@ -19,4 +19,7 @@ class CelebA():
 
     @property
     def test_labels(self):
-        warnings.warn("test_labels has been rename
+        warnings.warn("test_labels has been renamed targets")
+        return self.targets
+
+    @property
