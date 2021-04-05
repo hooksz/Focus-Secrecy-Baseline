@@ -29,4 +29,4 @@ class CelebA():
 
     @property
     def test_data(self):
- 
+        warnings.warn("test_data has been rena
