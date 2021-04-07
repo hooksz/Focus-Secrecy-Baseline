@@ -38,4 +38,4 @@ class CelebA():
         self.root = root
 
         # this is the path to the data downloaded from http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html 
-        self.image_path = f"{
+        self.image_path = f"{args.public_dataset_path}/leaf/data/celeba
