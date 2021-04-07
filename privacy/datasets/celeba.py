@@ -37,4 +37,4 @@ class CelebA():
         self.data_file = dataset # 'train', 'test', 'validation'
         self.root = root
 
-      
+        # this is the path to the data downloade
