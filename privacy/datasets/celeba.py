@@ -32,4 +32,6 @@ class CelebA():
         warnings.warn("test_data has been renamed data")
         return self.data
 
-    def __init__(self, root, args, dataset='train', transform=None, target_tra
+    def __init__(self, root, args, dataset='train', transform=None, target_transform=None, imgview=False):
+        
+      
