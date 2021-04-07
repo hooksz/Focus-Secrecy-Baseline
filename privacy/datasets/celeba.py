@@ -34,4 +34,7 @@ class CelebA():
 
     def __init__(self, root, args, dataset='train', transform=None, target_transform=None, imgview=False):
         
-        self.data_file = dataset # 'train', 'test', '
+        self.data_file = dataset # 'train', 'test', 'validation'
+        self.root = root
+
+      
