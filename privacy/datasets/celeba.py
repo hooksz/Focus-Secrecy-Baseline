@@ -37,4 +37,4 @@ class CelebA():
         self.data_file = dataset # 'train', 'test', 'validation'
         self.root = root
 
-        # this is the path to the data downloade
+        # this is the path to the data downloaded from http://mmlab.ie.cuhk.edu.hk/projects/CelebA.
