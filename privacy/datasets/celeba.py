@@ -41,4 +41,5 @@ class CelebA():
         self.image_path = f"{args.public_dataset_path}/leaf/data/celeba/img_align_celeba"
         
         self.transform = transform
-        self.target_transform = 
+        self.target_transform = target_transform
+        self.path = os.p
