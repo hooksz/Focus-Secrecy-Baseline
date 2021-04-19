@@ -42,4 +42,4 @@ class CelebA():
         
         self.transform = transform
         self.target_transform = target_transform
-        self.path = os.p
+        self.path = os.path.join(self.processed_folder, self.data_file)
