@@ -45,4 +45,5 @@ class CelebA():
         self.path = os.path.join(self.processed_folder, self.data_file)
         self.retrievals = None
 
-        # load data a
+        # load data and targets
+        self.data, sel
