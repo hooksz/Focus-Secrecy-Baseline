@@ -43,3 +43,6 @@ class CelebA():
         self.transform = transform
         self.target_transform = target_transform
         self.path = os.path.join(self.processed_folder, self.data_file)
+        self.retrievals = None
+
+        # load data a
