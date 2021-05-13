@@ -46,4 +46,7 @@ class CelebA():
         self.retrievals = None
 
         # load data and targets
-        self.data, self.targets, self.user_ids = self.load_meta_dat
+        self.data, self.targets, self.user_ids = self.load_meta_data(args, self.path)
+        self.modality="image"
+
+    
