@@ -49,4 +49,6 @@ class CelebA():
         self.data, self.targets, self.user_ids = self.load_meta_data(args, self.path)
         self.modality="image"
 
-    
+        self.imgview = imgview
+
+    def __getitem_
