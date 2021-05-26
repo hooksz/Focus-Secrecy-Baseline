@@ -53,4 +53,4 @@ class CelebA():
 
     def __getitem__(self, index):
         imgName, target = self.data[index], int(self.targets[index])
-   
+        fpath = os.path.join(self.image_path, imgName
