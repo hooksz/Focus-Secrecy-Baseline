@@ -52,4 +52,5 @@ class CelebA():
         self.imgview = imgview
 
     def __getitem__(self, index):
-        imgName, target = self.data[in
+        imgName, target = self.data[index], int(self.targets[index])
+   
