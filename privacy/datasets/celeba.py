@@ -57,4 +57,6 @@ class CelebA():
         img = Image.open(fpath)
         img = self.transform(img)
 
-        return img, targ
+        return img, target, fpath, index
+
+    def __len__(s
