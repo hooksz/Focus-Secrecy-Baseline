@@ -55,4 +55,6 @@ class CelebA():
         imgName, target = self.data[index], int(self.targets[index])
         fpath = os.path.join(self.image_path, imgName)
         img = Image.open(fpath)
-        i
+        img = self.transform(img)
+
+        return img, targ
