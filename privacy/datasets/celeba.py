@@ -59,4 +59,8 @@ class CelebA():
 
         return img, target, fpath, index
 
-    def __len__(s
+    def __len__(self):
+        return len(self.data)
+
+    @property
+ 
