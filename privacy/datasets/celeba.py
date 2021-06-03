@@ -63,4 +63,5 @@ class CelebA():
         return len(self.data)
 
     @property
- 
+    def raw_folder(self):
+        return self
