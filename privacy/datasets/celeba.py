@@ -70,4 +70,5 @@ class CelebA():
     def processed_folder(self):
         return self.root
 
-    def _check_
+    def _check_exists(self):
+        return (os.path.exi
