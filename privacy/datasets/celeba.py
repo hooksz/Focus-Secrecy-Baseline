@@ -71,4 +71,5 @@ class CelebA():
         return self.root
 
     def _check_exists(self):
-        return (os.path.exi
+        return (os.path.exists(os.path.join(self.processed_folder,
+ 
