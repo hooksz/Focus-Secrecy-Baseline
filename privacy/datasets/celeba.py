@@ -64,4 +64,7 @@ class CelebA():
 
     @property
     def raw_folder(self):
-        return self
+        return self.root
+
+    @property
+    def processed_folder(sel
