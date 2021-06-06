@@ -74,4 +74,6 @@ class CelebA():
         return (os.path.exists(os.path.join(self.processed_folder,
                                             self.data_file)))
 
-    def load_meta_data(self, args, 
+    def load_meta_data(self, args, path):
+        datas, labels = [], []
+  
