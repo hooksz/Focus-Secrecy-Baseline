@@ -67,4 +67,7 @@ class CelebA():
         return self.root
 
     @property
-    def processed_folder(sel
+    def processed_folder(self):
+        return self.root
+
+    def _check_
