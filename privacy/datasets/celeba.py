@@ -72,4 +72,4 @@ class CelebA():
 
     def _check_exists(self):
         return (os.path.exists(os.path.join(self.processed_folder,
- 
+                                            self.data_file
