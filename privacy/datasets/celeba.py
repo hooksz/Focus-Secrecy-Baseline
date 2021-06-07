@@ -76,4 +76,6 @@ class CelebA():
 
     def load_meta_data(self, args, path):
         datas, labels = [], []
-  
+        user_ids = []
+        queries_text = {
+   
