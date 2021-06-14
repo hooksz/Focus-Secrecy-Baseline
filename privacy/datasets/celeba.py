@@ -79,4 +79,7 @@ class CelebA():
         user_ids = []
         queries_text = {
             0: "frowning",
-            1: "sm
+            1: "smiling"
+        }
+
+        with open(self.root) 
