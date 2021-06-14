@@ -78,4 +78,5 @@ class CelebA():
         datas, labels = [], []
         user_ids = []
         queries_text = {
-   
+            0: "frowning",
+            1: "sm
