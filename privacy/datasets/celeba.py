@@ -82,4 +82,7 @@ class CelebA():
             1: "smiling"
         }
 
-        with open(self.root) 
+        with open(self.root) as f:
+            dataset = json.load(f)
+
+        
