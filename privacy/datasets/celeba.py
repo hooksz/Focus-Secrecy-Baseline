@@ -86,4 +86,4 @@ class CelebA():
             dataset = json.load(f)
 
         error_images = 0
-        for i, ((k, v), username) in t
+        for i, ((k, v), username) in tqdm(enumerate(zip(dataset['user_data'].items(), 
