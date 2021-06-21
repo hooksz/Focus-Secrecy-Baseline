@@ -85,4 +85,5 @@ class CelebA():
         with open(self.root) as f:
             dataset = json.load(f)
 
-        
+        error_images = 0
+        for i, ((k, v), username) in t
