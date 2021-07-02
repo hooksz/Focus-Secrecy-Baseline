@@ -90,4 +90,5 @@ class CelebA():
             for j, (x, y) in enumerate(zip(v['x'], v['y'])):
                 fpath = f"{self.image_path}/{x}"
                 if not os.path.exists(fpath):
-            
+                    continue
+                elif "1442
