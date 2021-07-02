@@ -89,4 +89,5 @@ class CelebA():
         for i, ((k, v), username) in tqdm(enumerate(zip(dataset['user_data'].items(), dataset['users']))):
             for j, (x, y) in enumerate(zip(v['x'], v['y'])):
                 fpath = f"{self.image_path}/{x}"
-             
+                if not os.path.exists(fpath):
+            
