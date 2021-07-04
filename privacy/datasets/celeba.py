@@ -91,4 +91,5 @@ class CelebA():
                 fpath = f"{self.image_path}/{x}"
                 if not os.path.exists(fpath):
                     continue
-                elif "1442
+                elif "144224" in fpath:
+                    # image did not e
