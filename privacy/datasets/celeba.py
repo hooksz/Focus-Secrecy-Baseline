@@ -92,4 +92,6 @@ class CelebA():
                 if not os.path.exists(fpath):
                     continue
                 elif "144224" in fpath:
-                    # image did not e
+                    # image did not exist in download
+                    continue
+  
