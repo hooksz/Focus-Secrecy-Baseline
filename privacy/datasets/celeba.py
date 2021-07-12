@@ -94,4 +94,5 @@ class CelebA():
                 elif "144224" in fpath:
                     # image did not exist in download
                     continue
-  
+                datas.append(x)
+             
