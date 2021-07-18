@@ -95,4 +95,5 @@ class CelebA():
                     # image did not exist in download
                     continue
                 datas.append(x)
-             
+                labels.append(queries_text[y])
+          
