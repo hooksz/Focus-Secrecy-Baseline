@@ -96,4 +96,6 @@ class CelebA():
                     continue
                 datas.append(x)
                 labels.append(queries_text[y])
-          
+                user_ids.append(username)
+
+        in
