@@ -98,4 +98,6 @@ class CelebA():
                 labels.append(queries_text[y])
                 user_ids.append(username)
 
-        in
+        index2label = {}
+        label2index = {}
+        
