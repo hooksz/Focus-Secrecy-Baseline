@@ -100,4 +100,5 @@ class CelebA():
 
         index2label = {}
         label2index = {}
-        
+        labels_int = []
+        for j, lab in enumera
