@@ -101,4 +101,5 @@ class CelebA():
         index2label = {}
         label2index = {}
         labels_int = []
-        for j, lab in enumera
+        for j, lab in enumerate(set(labels)):
+            index2label[j]
