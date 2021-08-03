@@ -105,4 +105,6 @@ class CelebA():
             index2label[j] = lab
             label2index[lab] = j
         self.index2label = index2label
-        self.
+        self.label2index = label2index
+
+        pr
