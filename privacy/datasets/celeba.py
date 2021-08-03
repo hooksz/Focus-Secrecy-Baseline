@@ -107,4 +107,5 @@ class CelebA():
         self.index2label = index2label
         self.label2index = label2index
 
-        pr
+        print(f"Loaded in {len(datas)} data points.")
+    
