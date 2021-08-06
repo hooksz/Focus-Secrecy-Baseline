@@ -108,4 +108,6 @@ class CelebA():
         self.label2index = label2index
 
         print(f"Loaded in {len(datas)} data points.")
-    
+        return datas, labels, user_ids
+
+    def lo
