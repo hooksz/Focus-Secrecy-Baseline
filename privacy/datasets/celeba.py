@@ -110,4 +110,5 @@ class CelebA():
         print(f"Loaded in {len(datas)} data points.")
         return datas, labels, user_ids
 
-    def lo
+    def load_file(self, path):
+        with open(self.r
