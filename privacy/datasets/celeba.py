@@ -113,4 +113,4 @@ class CelebA():
     def load_file(self, path):
         with open(self.root) as f:
             datas = json.load(f)
-    
+        return datas
