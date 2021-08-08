@@ -73,3 +73,51 @@ class FEMNIST():
         with open(client_path) as f:
             csv_reader = csv.reader(f, delimiter=',')
             line_count = 0
+            for row in csv_reader:
+                client = row[0]
+                sample_path = row[1]
+                client2samplepath[client].append(sample_path)
+
+        samplepath2client = {}
+        for cli, samples in client2samplepath.items():
+            for sample in samples:
+                samplepath2client[sample] = cli
+
+        with open(path) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            for row in csv_reader:
+                if line_count != 0:
+                    label_name = row[-2]
+                    bytes_object = bytes.fromhex(label_name)
+                    ascii_string = bytes_object.decode("ASCII")
+
+                    x = row[1]
+                    y = ascii_string
+                    datas.append(x)
+                    labels.append(y)
+                    user_ids.append(samplepath2client[x])
+                line_count += 1
+
+        index2label = {}
+        label2index = {}
+        labels_int = []
+
+        organize_labels = {}
+        for lab in set(labels):
+            if lab.isdigit():
+                lab_str = f"The picture is of the digit {lab}"
+            elif lab.isupper():
+                lab_str = f"The picture is of the uppercase letter {lab}"
+            else:
+                lab_str = f"The picture is of the lowercase letter {lab}"
+            if lab_str not in organize_labels:
+                organize_labels[lab_str] = lab
+
+        organize_labels_keys = list(organize_labels.keys())
+        organize_labels_keys = sorted(organize_labels_keys)
+        for j, key in enumerate(organize_labels_keys):
+            index2label[j] = organize_labels[key]
+            label2index[organize_labels[key]] = j
+
+        self.index2label = index2label
