@@ -111,4 +111,6 @@ class CelebA():
         return datas, labels, user_ids
 
     def load_file(self, path):
-        with open(self.r
+        with open(self.root) as f:
+            datas = json.load(f)
+    
