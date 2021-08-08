@@ -19,3 +19,57 @@ class FEMNIST():
     def test_labels(self):
         warnings.warn("test_labels has been renamed targets")
         return self.targets
+
+    @property
+    def train_data(self):
+        warnings.warn("train_data has been renamed data")
+        return self.data
+
+    @property
+    def test_data(self):
+        warnings.warn("test_data has been renamed data")
+        return self.data
+
+    def __init__(self, root, args, dataset='train', transform=None, target_transform=None, imgview=False):
+        
+        self.data_file = dataset # 'train', 'test', 'validation'
+        self.root = root
+        self.transform = transform
+        self.target_transform = target_transform
+        self.path = os.path.join(self.processed_folder, self.data_file)
+
+        # load data and targets
+        self.data, self.targets, self.user_ids = self.load_file(args, self.path)
+        self.modality = "image"
+        self.imgview = imgview
+
+    def __getitem__(self, index):
+        imgName, target = self.data[index], int(self.targets[index])
+        fpath = os.path.join(self.root, imgName)
+        img = Image.open(fpath)
+        img = self.transform(img)
+        return img, target, fpath, index
+
+    def __len__(self):
+        return len(self.data)
+
+    @property
+    def raw_folder(self):
+        return self.root
+
+    @property
+    def processed_folder(self):
+        return self.root
+
+    def _check_exists(self):
+        return (os.path.exists(os.path.join(self.processed_folder,
+                                            self.data_file)))
+
+    def load_meta_data(self, args, path):
+        datas, labels, user_ids = [], [], []
+
+        client_path = "benchmarks/leaf/data/femnist/client_data_mapping/femnist.csv"
+        client2samplepath = defaultdict(list)
+        with open(client_path) as f:
+            csv_reader = csv.reader(f, delimiter=',')
+            line_count = 0
