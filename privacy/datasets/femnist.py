@@ -121,3 +121,14 @@ class FEMNIST():
             label2index[organize_labels[key]] = j
 
         self.index2label = index2label
+        self.label2index = label2index
+        
+        for lab in labels:
+            labels_int.append(label2index[lab])
+            
+        return datas, labels_int, user_ids
+
+    def load_file(self, args, path):
+        # load meta file to get labels
+        datas, labels, user_ids = self.load_meta_data(args, os.path.join(self.processed_folder, 'client_data_mapping', self.data_file+'.csv'))
+        return datas, labels, user_ids
