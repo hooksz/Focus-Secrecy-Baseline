@@ -96,3 +96,44 @@ class News20():
             base_prompt = f"{clean_input}{self.instruction_end}"
 
         elif "t0" in self.model_name:
+            selected_topics = [value for key, value in self.index2label.items()]
+            instruction = "What label best describes text ("
+            for topic in selected_topics[:-1]:
+                instruction += f"{topic} ||| "
+            instruction += f"||| {selected_topics[-1]})?"
+
+            clean_input = self.parse_document(input)['lines']
+            clean_input = self.clean_lines(clean_input)
+            token_text = self.tokenizer(clean_input, return_tensors="pt", truncation=True, padding=True)
+            token_text = self.tokenizer.convert_ids_to_tokens(token_text.input_ids[0])
+            token_text = token_text[:self.max_length]
+            token_text = " ".join(token_text)
+            truncated_text = clean_input[:len(token_text)]
+
+            base_prompt = f"Text: {truncated_text} \n{instruction}\n"
+        else:
+            assert 0, print("Unsupported operation in 20news.")
+
+        return base_prompt
+
+
+    def parse_document(self, doc):
+        key_parts = ["Subject: Re:", "Organization", "Lines"]
+        parts_dict = {}
+        
+        parts = doc.split(key_parts[0])
+        parts_dict['from'] = parts[0]
+        
+        try:
+            parts = parts[1].split(key_parts[1])
+        except:
+            parts = doc.split(key_parts[1])
+        parts_dict['subject'] = parts[0]
+        
+        try:
+            parts = parts[1].split(key_parts[2])
+        except:
+            parts = doc.split(key_parts[2])
+        parts_dict['org'] = parts[0]
+        
+        try:
