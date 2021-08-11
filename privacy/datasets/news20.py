@@ -137,3 +137,47 @@ class News20():
         parts_dict['org'] = parts[0]
         
         try:
+            parts_dict['lines'] = parts[1][4:]
+        except:
+            parts = doc.split(key_parts[2])
+            try:
+                parts_dict['lines'] = parts[1][4:]
+            except:
+                parts_dict['lines'] = doc
+        
+        return parts_dict
+
+
+    def clean_lines(self, lines):
+        lines = lines.replace("*", "")
+        lines = lines.replace("|", "")
+        lines = lines.replace(">", "")
+        lines = lines.replace("<", "")
+        lines = lines.replace("---", "")
+        lines = lines.replace("^", "")
+        lines = lines.replace("\t", "")
+        
+        clean_lines = []
+        for wd in lines.split():
+            if "@" not in wd and ".com" not in wd:
+                clean_lines.append(wd)
+                
+        lines = " ".join(clean_lines)
+        
+        ines = lines.replace("   ", " ")
+        lines = lines.replace("  ", " ")
+        return lines    
+
+    # convert raw label names to label descriptions
+    def clean_label(self, label):
+        category2word = {
+                "comp": "",
+                "alt": "",
+                "misc": "",
+                "sci": "",
+                "talk": "",
+                "rec": "",
+                "soc": "",
+                "sport": "",
+                "autos": "automobiles",
+                "med": "medical",
