@@ -223,3 +223,47 @@ class News20():
             error = 0
 
         return error, result
+
+
+    def compute_accuracy(self, results, dataset, args):
+        scores = Counter()
+        examples2preds = {}
+        num_users = 0
+        errors = 0
+        count = 0
+        topics = [topic for index, topic in self.index2label.items()]
+
+        for i, (data, result) in enumerate(zip(dataset, results)):
+            gold = data[1]
+            gold = self.index2label[gold]
+            texts = data[0]
+            error = 0
+        
+            if "gpt" in args.model:
+                # need to chop off the prompt
+                prompt_idx = result.index(self.instruction_end)
+                result = result[prompt_idx+len(self.instruction_ind):]
+
+            error, result = self.get_news20_iserror(topics, result, gold)
+            results.append(result)
+            errors += error
+            count += 1
+
+            examples2preds[i] = {
+                "text": texts,
+                "label": gold,
+                "pred": result
+            }
+
+            # for inspection
+            if not error and i < 100:
+                print(result, gold)
+                print("---------------------------------")
+            
+        print(f"Accuracy: {1 - (errors/count)} across {count} examples.")
+
+        directory = f"{args.result_path}/{args.dataset}/"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        with open(f"{directory}/{args.paradigm}_{args.model}_{args.split}_{args.client_subsample}_examples2preds.json", "w") as f:
+            json.dump(examples2preds, f)
