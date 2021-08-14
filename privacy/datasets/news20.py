@@ -181,3 +181,45 @@ class News20():
                 "sport": "",
                 "autos": "automobiles",
                 "med": "medical",
+                "crypt": "cryptography security",
+                "mideast": "middle east",
+                "sys": "",
+                "forsale": "sale",
+        }
+                
+        label_clean = label.replace("religion.christian", "christianity")
+        wds = label_clean.split(".")
+        clean_wds = []
+        for wd in wds:
+            if wd in category2word:
+                wd = category2word[wd]
+                if wd:
+                    clean_wds.append(wd)
+            else:
+                clean_wds.append(wd)
+        label_text =  " ".join(clean_wds)
+        return label_text
+
+
+    def get_news20_iserror(self, topics, result, gold):
+        error = 0
+        result = result.split(".")[0].strip()
+        result = result.lower()
+        found_topics = [topic for topic in topics if topic in result]
+        if not result or gold.lower() not in result.split():
+            error = 1
+        elif len(found_topics) > 1:
+            error = 1
+        
+        if len(found_topics) > 1:
+            if "politics" in found_topics and result != "politics" and gold != "politics" and "politics" in gold and gold in result:
+                error = 0    
+        result_fix = result + "s" 
+        if result_fix == gold:
+            error = 0
+        elif result == "medicine" and gold == "medical":
+            error = 0
+        elif result == "cars" and gold == "automobiles":
+            error = 0
+
+        return error, result
