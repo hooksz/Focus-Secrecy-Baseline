@@ -301,3 +301,45 @@ class News20():
 
         data_file = h5py.File(data_path, "r", swmr=True)
         partition_file = h5py.File(partition_path, "r", swmr=True)
+        partition_method = "uniform"
+        index_list = []
+        examples_per_client = []
+
+        split_to_load = split.replace("_split", "")
+        if split_to_load == "val":
+            split_to_load = "train"
+        for client_idx in tqdm(
+            partition_file[partition_method]
+            ["partition_data"].keys(),
+            desc="Loading index from h5 file."):
+            index_list.extend(partition_file[partition_method]["partition_data"][client_idx][split_to_load][()][:])
+            examples_per_client.append(len(partition_file[partition_method]["partition_data"]
+                [client_idx][split_to_load][()][:]))
+        data = read_instance_from_h5(data_file, index_list)
+        data_file.close()
+        partition_file.close()
+
+        print(f"Average examples per client: {sum(examples_per_client)/len(examples_per_client)}")
+
+        # Existing
+        datas, labels, user_ids = [], [], []
+
+        random.seed(args.seed)
+
+        if not args:
+            client_subsample = 1
+        else:
+            client_subsample = args.client_subsample
+
+        user_id_count = 0
+        user_examples_left = examples_per_client[user_id_count]
+        for j, (x, y) in enumerate(zip(data['X'], data['y'])):
+            if user_id_count < len(examples_per_client)/2 and split=="val_split":
+                continue
+            elif user_id_count > len(examples_per_client)/2 and split=="train_split":
+                continue
+            r = random.random()
+            if r > client_subsample:
+                continue
+                
+            datas.append(x)
