@@ -267,3 +267,37 @@ class News20():
             os.makedirs(directory)
         with open(f"{directory}/{args.paradigm}_{args.model}_{args.split}_{args.client_subsample}_examples2preds.json", "w") as f:
             json.dump(examples2preds, f)
+
+
+    def load_meta_data(self, args, data_path, partition_path, split="train"):
+        def read_instance_from_h5(data_file, index_list, desc=""):
+            X = list()
+            y = list()
+            for idx in tqdm(index_list, desc="Loading data from h5 file." + desc):
+                xval = data_file["X"][str(idx)][()]
+                if type(xval) == str:
+                    X.append(xval)
+                else:
+                    X.append(xval.decode("utf-8"))
+
+                yval = data_file["Y"][str(idx)][()]
+                if type(yval) == str:
+                    y.append(yval)
+                else:
+                    y.append(yval.decode("utf-8"))
+            return {"X": X, "y": y}
+
+        def load_attributes(data_path):
+            data_file = h5py.File(data_path, "r", swmr=True)
+            attributes = json.loads(data_file["attributes"][()])
+            data_file.close()
+            return attributes
+
+        attributes = load_attributes(data_path)
+        label_vocab=attributes["label_vocab"]
+        data_file = h5py.File(data_path, "r", swmr=True)
+        attributes = json.loads(data_file["attributes"][()])
+        data_file.close()
+
+        data_file = h5py.File(data_path, "r", swmr=True)
+        partition_file = h5py.File(partition_path, "r", swmr=True)
