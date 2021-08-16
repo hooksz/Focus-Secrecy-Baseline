@@ -343,3 +343,31 @@ class News20():
                 continue
                 
             datas.append(x)
+            labels.append(self.clean_label(y))
+
+            if args and args.dataset_subsize > 0:
+                if j == args.dataset_subsize:
+                    break
+
+            user_ids.append(user_id_count)
+
+            user_examples_left -= 1
+            if user_examples_left == 0:
+                user_id_count += 1
+                if user_id_count < len(examples_per_client):
+                    user_examples_left = examples_per_client[user_id_count]
+
+        index2label = {}
+        label2index = {}
+        labels_int = []
+        for j, lab in enumerate(set(labels)):
+            index2label[j] = lab
+            label2index[lab] = j
+
+        self.index2label = index2label
+        self.label2index = label2index
+        
+        for lab in labels:
+            labels_int.append(label2index[lab])
+            
+        return datas, labels_int, user_ids
