@@ -13,4 +13,9 @@ import torch
 import random
 import math
 
-cl
+class Reddit():
+
+    classes = []
+
+    @property
+    d
