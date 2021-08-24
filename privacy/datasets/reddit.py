@@ -18,4 +18,5 @@ class Reddit():
     classes = []
 
     @property
-    d
+    def train_labels(self):
+        warnings.warn
