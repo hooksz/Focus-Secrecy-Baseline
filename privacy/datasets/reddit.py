@@ -23,3 +23,5 @@ class Reddit():
         return self.targets
 
     @property
+    def test_labels(self):
+        warnin
