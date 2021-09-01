@@ -24,4 +24,5 @@ class Reddit():
 
     @property
     def test_labels(self):
-        warnin
+        warnings.warn("test_labels has been renamed targets")
+        return self
