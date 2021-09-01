@@ -20,4 +20,6 @@ class Reddit():
     @property
     def train_labels(self):
         warnings.warn("train_labels has been renamed targets")
-   
+        return self.targets
+
+    @property
