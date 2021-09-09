@@ -29,3 +29,4 @@ class Reddit():
 
     @property
     def train_data(self):
+        warnings.warn("train_data has b
