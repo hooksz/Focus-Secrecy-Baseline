@@ -34,4 +34,4 @@ class Reddit():
 
     @property
     def test_data(self):
-        w
+        warnings.warn("test_data has been renamed data")
