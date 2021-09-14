@@ -35,3 +35,6 @@ class Reddit():
     @property
     def test_data(self):
         warnings.warn("test_data has been renamed data")
+        return self.data
+
+    def __init__(self,
