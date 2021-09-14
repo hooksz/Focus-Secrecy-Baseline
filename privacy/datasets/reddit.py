@@ -37,4 +37,7 @@ class Reddit():
         warnings.warn("test_data has been renamed data")
         return self.data
 
-    def __init__(self, data_path, args, dataset='train', transform=None, tok
+    def __init__(self, data_path, args, dataset='train', transform=None, tokenizer=None):
+        
+        self.data_file = dataset 
+     
