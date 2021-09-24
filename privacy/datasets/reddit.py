@@ -42,4 +42,7 @@ class Reddit():
         self.data_file = dataset 
         self.data_path = data_path
 
-        self.index2
+        self.index2label = {}
+
+        # load data and targets
+    
