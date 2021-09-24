@@ -40,4 +40,6 @@ class Reddit():
     def __init__(self, data_path, args, dataset='train', transform=None, tokenizer=None):
         
         self.data_file = dataset 
-     
+        self.data_path = data_path
+
+        self.index2
