@@ -45,4 +45,4 @@ class Reddit():
         self.index2label = {}
 
         # load data and targets
-    
+        self.data, self.targets, self.user_ids, self
