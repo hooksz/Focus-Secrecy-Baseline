@@ -47,4 +47,6 @@ class Reddit():
         # load data and targets
         self.data, self.targets, self.user_ids, self.subreddits, self.target2name_map = self.load_meta_data(args, self.data_path, dataset)
         self.modality="nlp"
-      
+        self.retrievals = []
+
+    def __getitem_
