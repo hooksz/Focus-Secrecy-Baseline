@@ -49,4 +49,5 @@ class Reddit():
         self.modality="nlp"
         self.retrievals = []
 
-    def __getitem_
+    def __getitem__(self, index):
+        input, target = self.
