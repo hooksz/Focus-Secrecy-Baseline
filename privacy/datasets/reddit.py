@@ -51,4 +51,5 @@ class Reddit():
 
     def __getitem__(self, index):
         input, target = self.data[index], self.targets[index]
-        fpa
+        fpath= ""
+        return input, target, fpat
