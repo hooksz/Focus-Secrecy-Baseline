@@ -50,4 +50,5 @@ class Reddit():
         self.retrievals = []
 
     def __getitem__(self, index):
-        input, target = self.
+        input, target = self.data[index], self.targets[index]
+        fpa
