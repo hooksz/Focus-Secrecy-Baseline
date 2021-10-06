@@ -58,4 +58,6 @@ class Reddit():
         return len(self.data)
 
     def _check_exists(self):
-        return (os.path.exi
+        return (os.path.exists(os.path.join(self.data_path)))
+
+    def get_i
