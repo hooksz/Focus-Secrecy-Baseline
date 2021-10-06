@@ -60,4 +60,5 @@ class Reddit():
     def _check_exists(self):
         return (os.path.exists(os.path.join(self.data_path)))
 
-    def get_i
+    def get_incontext_examples(self, args, training_dataset):
+     
