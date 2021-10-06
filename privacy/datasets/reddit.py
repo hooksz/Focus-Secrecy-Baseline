@@ -57,4 +57,5 @@ class Reddit():
     def __len__(self):
         return len(self.data)
 
-    def _check_exi
+    def _check_exists(self):
+        return (os.path.exi
