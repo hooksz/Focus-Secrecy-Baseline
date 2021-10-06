@@ -55,4 +55,6 @@ class Reddit():
         return input, target, fpath, index
 
     def __len__(self):
-        ret
+        return len(self.data)
+
+    def _check_exi
