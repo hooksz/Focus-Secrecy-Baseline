@@ -61,4 +61,5 @@ class Reddit():
         return (os.path.exists(os.path.join(self.data_path)))
 
     def get_incontext_examples(self, args, training_dataset):
-     
+        # for in context random
+        if "incontext
