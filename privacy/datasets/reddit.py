@@ -62,4 +62,6 @@ class Reddit():
 
     def get_incontext_examples(self, args, training_dataset):
         # for in context random
-        if "incontext
+        if "incontext" in args.prompt_choice:
+
+            # first collect in
