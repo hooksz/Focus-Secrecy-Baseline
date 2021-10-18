@@ -66,4 +66,4 @@ class Reddit():
 
             # first collect incontext examples using the desired strategy
             if args.prompt_choice == "random_incontext":
-  
+                training_users2sents = defau
