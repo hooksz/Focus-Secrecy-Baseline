@@ -65,4 +65,5 @@ class Reddit():
         if "incontext" in args.prompt_choice:
 
             # first collect incontext examples using the desired strategy
-            i
+            if args.prompt_choice == "random_incontext":
+  
