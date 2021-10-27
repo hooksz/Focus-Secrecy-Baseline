@@ -69,4 +69,6 @@ class Reddit():
                 training_users2sents = defaultdict(list)
             elif args.prompt_choice == "random_incontext_noprivacy":
                 training_sents = []
-                training_users2c
+                training_users2counts = defaultdict(int)
+            else:
+       
