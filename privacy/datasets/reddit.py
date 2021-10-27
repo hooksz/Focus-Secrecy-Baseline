@@ -72,4 +72,4 @@ class Reddit():
                 training_users2counts = defaultdict(int)
             else:
                 training_users2sents = defaultdict(dict)
-  
+            for data, label, uid, subreddi
