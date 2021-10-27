@@ -71,4 +71,5 @@ class Reddit():
                 training_sents = []
                 training_users2counts = defaultdict(int)
             else:
-       
+                training_users2sents = defaultdict(dict)
+  
