@@ -75,4 +75,7 @@ class Reddit():
             for data, label, uid, subreddit in zip(training_dataset.data, training_dataset.targets, training_dataset.user_ids, training_dataset.subreddits):
                 example = {
                     "input": data,
-                    "la
+                    "label": label
+                }
+
+          
