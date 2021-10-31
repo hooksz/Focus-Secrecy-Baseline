@@ -79,4 +79,4 @@ class Reddit():
                 }
 
                 # collect by user in aggregate
-         
+                if args.prompt_choice == "random_
