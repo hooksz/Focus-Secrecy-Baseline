@@ -79,4 +79,5 @@ class Reddit():
                 }
 
                 # collect by user in aggregate
-                if args.prompt_choice == "random_
+                if args.prompt_choice == "random_incontext": 
+                    
