@@ -78,4 +78,5 @@ class Reddit():
                     "label": label
                 }
 
-          
+                # collect by user in aggregate
+         
