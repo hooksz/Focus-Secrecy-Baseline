@@ -81,4 +81,5 @@ class Reddit():
                 # collect by user in aggregate
                 if args.prompt_choice == "random_incontext": 
                     training_users2sents[uid].append(example)
-        
+                
+                # no privacy, combine all 
