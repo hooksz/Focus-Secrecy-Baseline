@@ -88,4 +88,5 @@ class Reddit():
                     training_users2counts[uid] += 1
 
                 # collect by user, split by subreddit
-                el
+                else:
+                    if subreddit not in training_us
