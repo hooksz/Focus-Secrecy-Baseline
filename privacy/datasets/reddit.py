@@ -84,4 +84,5 @@ class Reddit():
                 
                 # no privacy, combine all user examples
                 elif args.prompt_choice == "random_incontext_noprivacy":
-                    traini
+                    training_sents.append(example)
+                    training_u
