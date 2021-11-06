@@ -87,4 +87,5 @@ class Reddit():
                     training_sents.append(example)
                     training_users2counts[uid] += 1
 
-                # collect by 
+                # collect by user, split by subreddit
+                el
