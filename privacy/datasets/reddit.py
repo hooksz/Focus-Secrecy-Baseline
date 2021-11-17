@@ -90,4 +90,5 @@ class Reddit():
                 # collect by user, split by subreddit
                 else:
                     if subreddit not in training_users2sents[uid]:
-                        trainin
+                        training_users2sents[uid][subreddit] = []
+              
