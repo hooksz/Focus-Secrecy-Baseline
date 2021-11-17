@@ -91,4 +91,4 @@ class Reddit():
                 else:
                     if subreddit not in training_users2sents[uid]:
                         training_users2sents[uid][subreddit] = []
-              
+                    training_users2sents[uid][subreddit]
