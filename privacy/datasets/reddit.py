@@ -93,4 +93,5 @@ class Reddit():
                         training_users2sents[uid][subreddit] = []
                     training_users2sents[uid][subreddit].append(example)
 
-            # next assign in context
+            # next assign in context examples to training examples
+          
