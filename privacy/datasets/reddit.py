@@ -94,4 +94,5 @@ class Reddit():
                     training_users2sents[uid][subreddit].append(example)
 
             # next assign in context examples to training examples
-          
+            test2examples = []
+            if args.pro
