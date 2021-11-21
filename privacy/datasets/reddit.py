@@ -95,4 +95,4 @@ class Reddit():
 
             # next assign in context examples to training examples
             test2examples = []
-            if args.pro
+            if args.prompt_choice in ["random_incontext_noprivacy", "inconte
