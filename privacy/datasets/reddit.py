@@ -97,4 +97,5 @@ class Reddit():
             test2examples = []
             if args.prompt_choice in ["random_incontext_noprivacy", "incontext"]:
                 random.seed(0)
-            
+            for data, uid in zip(self.data, self.user_ids):
+      
