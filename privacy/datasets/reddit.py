@@ -101,4 +101,4 @@ class Reddit():
                 # get the incontext examples
                 if args.prompt_choice == "random_incontext_noprivacy":
                     user_count = training_users2counts[uid]
-          
+                    user_entry = random.sample(training_sents, m
