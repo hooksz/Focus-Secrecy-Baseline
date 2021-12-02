@@ -103,4 +103,5 @@ class Reddit():
                     user_count = training_users2counts[uid]
                     user_entry = random.sample(training_sents, min(user_count, args.num_incontext))
                 else:
-                    train_sents = t
+                    train_sents = training_users2sents[uid]
+                    
