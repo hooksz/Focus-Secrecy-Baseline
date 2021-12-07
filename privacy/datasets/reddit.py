@@ -104,4 +104,5 @@ class Reddit():
                     user_entry = random.sample(training_sents, min(user_count, args.num_incontext))
                 else:
                     train_sents = training_users2sents[uid]
-                    
+                    if args.prompt_choice == "random_incontext":
+    
