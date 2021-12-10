@@ -108,3 +108,5 @@ class Reddit():
                         user_entry = train_sents[0:args.num_incontext]
                     else:
                         user_entry = []
+                        leftovers = []
+                        
