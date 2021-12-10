@@ -109,4 +109,4 @@ class Reddit():
                     else:
                         user_entry = []
                         leftovers = []
-                        
+                        total_train = sum([len(lst) for sbr, 
