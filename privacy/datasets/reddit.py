@@ -106,4 +106,5 @@ class Reddit():
                     train_sents = training_users2sents[uid]
                     if args.prompt_choice == "random_incontext":
                         user_entry = train_sents[0:args.num_incontext]
-                    els
+                    else:
+                        user_entry = []
