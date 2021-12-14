@@ -109,4 +109,5 @@ class Reddit():
                     else:
                         user_entry = []
                         leftovers = []
-                        total_train = sum([len(lst) for sbr, 
+                        total_train = sum([len(lst) for sbr, lst in train_sents.items()])
+                     
