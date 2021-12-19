@@ -112,4 +112,4 @@ class Reddit():
                         total_train = sum([len(lst) for sbr, lst in train_sents.items()])
                         for subreddit, lst in train_sents.items():
                             num = math.ceil((len(lst)/total_train)*(args.num_incontext))
-                            user_entry.ex
+                            user_entry.extend(random.sample(lst, min(len(lst), num)))
