@@ -113,3 +113,4 @@ class Reddit():
                         for subreddit, lst in train_sents.items():
                             num = math.ceil((len(lst)/total_train)*(args.num_incontext))
                             user_entry.extend(random.sample(lst, min(len(lst), num)))
+                        if len(user_entry) >
