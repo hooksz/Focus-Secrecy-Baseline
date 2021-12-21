@@ -114,4 +114,4 @@ class Reddit():
                             num = math.ceil((len(lst)/total_train)*(args.num_incontext))
                             user_entry.extend(random.sample(lst, min(len(lst), num)))
                         if len(user_entry) > args.num_incontext:
-                           
+                            user_entry = random.sample(user_entry, args.num_incontex
