@@ -115,4 +115,6 @@ class Reddit():
                             user_entry.extend(random.sample(lst, min(len(lst), num)))
                         if len(user_entry) > args.num_incontext:
                             user_entry = random.sample(user_entry, args.num_incontext)
-                user_text = [f"{entry['input']}
+                user_text = [f"{entry['input']} {entry['label']}." for entry in user_entry]
+
+  
