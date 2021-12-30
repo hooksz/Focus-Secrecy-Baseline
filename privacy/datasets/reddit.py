@@ -117,4 +117,5 @@ class Reddit():
                             user_entry = random.sample(user_entry, args.num_incontext)
                 user_text = [f"{entry['input']} {entry['label']}." for entry in user_entry]
 
-  
+                # clean
+                user_text = " "
