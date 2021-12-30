@@ -118,4 +118,5 @@ class Reddit():
                 user_text = [f"{entry['input']} {entry['label']}." for entry in user_entry]
 
                 # clean
-                user_text = " ".join(user_text).replace("<PAD> ", "").replace("<PAD>", 
+                user_text = " ".join(user_text).replace("<PAD> ", "").replace("<PAD>", "")
+                user_text = user_t
