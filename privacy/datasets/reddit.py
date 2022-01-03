@@ -119,4 +119,5 @@ class Reddit():
 
                 # clean
                 user_text = " ".join(user_text).replace("<PAD> ", "").replace("<PAD>", "")
-                user_text = user_t
+                user_text = user_text.replace("<EOS>", "")
+            
