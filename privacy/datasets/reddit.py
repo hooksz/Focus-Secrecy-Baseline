@@ -122,4 +122,4 @@ class Reddit():
                 user_text = user_text.replace("<EOS>", "")
                 user_text = user_text.replace(" . ", " ")
                 user_text = user_text.replace("  ", " ")
-               
+                user_text = user_text.replace("\n", " 
