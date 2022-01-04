@@ -121,4 +121,5 @@ class Reddit():
                 user_text = " ".join(user_text).replace("<PAD> ", "").replace("<PAD>", "")
                 user_text = user_text.replace("<EOS>", "")
                 user_text = user_text.replace(" . ", " ")
-      
+                user_text = user_text.replace("  ", " ")
+               
