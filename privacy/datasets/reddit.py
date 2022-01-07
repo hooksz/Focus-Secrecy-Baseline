@@ -123,4 +123,6 @@ class Reddit():
                 user_text = user_text.replace(" . ", " ")
                 user_text = user_text.replace("  ", " ")
                 user_text = user_text.replace("\n", " ")
-                user_text = user_text.replace("\t", " "
+                user_text = user_text.replace("\t", " ")
+
+                test2examples.append(f"{u
