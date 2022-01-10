@@ -131,4 +131,6 @@ class Reddit():
 
     def get_prompt(self, input="", incontext={}):
         prefix = ""
+        base_prompt = f"{prefix}{input}"
+
         
