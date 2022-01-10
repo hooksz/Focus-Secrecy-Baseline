@@ -129,4 +129,6 @@ class Reddit():
             self.data = test2examples
 
 
-    def get_prompt(self, input
+    def get_prompt(self, input="", incontext={}):
+        prefix = ""
+        
