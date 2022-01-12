@@ -133,4 +133,7 @@ class Reddit():
         prefix = ""
         base_prompt = f"{prefix}{input}"
 
-        
+        return base_prompt
+
+
+    def clean_text(self,
