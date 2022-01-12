@@ -137,4 +137,4 @@ class Reddit():
 
 
     def clean_text(self, text):
-        text = [t for t 
+        text = [t for t  in text if t not in ["<BOS>", "<EOS>"]]
