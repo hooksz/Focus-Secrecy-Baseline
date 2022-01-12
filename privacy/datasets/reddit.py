@@ -136,4 +136,5 @@ class Reddit():
         return base_prompt
 
 
-    def clean_text(self,
+    def clean_text(self, text):
+        text = [t for t 
