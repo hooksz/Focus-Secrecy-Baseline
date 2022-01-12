@@ -138,3 +138,7 @@ class Reddit():
 
     def clean_text(self, text):
         text = [t for t  in text if t not in ["<BOS>", "<EOS>"]]
+        return text
+
+
+    def load_meta_da
