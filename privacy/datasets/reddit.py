@@ -142,4 +142,5 @@ class Reddit():
 
 
     def load_meta_data(self, args, data_path, split="train"):
-  
+        with open(data_path) as f:
+           
