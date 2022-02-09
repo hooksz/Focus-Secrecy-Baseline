@@ -145,4 +145,6 @@ class Reddit():
         with open(data_path) as f:
             data = json.load(f)
 
-        datas, label
+        datas, labels = [], []
+        user_ids = []
+        targe
