@@ -147,4 +147,5 @@ class Reddit():
 
         datas, labels = [], []
         user_ids = []
-        targe
+        target2name_map = {}
+        subreddits = []
