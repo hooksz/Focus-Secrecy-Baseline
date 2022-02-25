@@ -151,4 +151,5 @@ class Reddit():
         subreddits = []
 
         for i, (k, v) in tqdm(enumerate(data['user_data'].items())):
-            for ite
+            for item, label in zip(v['x'], v['y']):
+          
