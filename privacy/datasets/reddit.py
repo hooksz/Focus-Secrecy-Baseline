@@ -150,4 +150,5 @@ class Reddit():
         target2name_map = {}
         subreddits = []
 
-        for i, (k, v) in tqdm(enumerate
+        for i, (k, v) in tqdm(enumerate(data['user_data'].items())):
+            for ite
