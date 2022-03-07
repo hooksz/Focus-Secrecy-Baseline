@@ -152,4 +152,4 @@ class Reddit():
 
         for i, (k, v) in tqdm(enumerate(data['user_data'].items())):
             for item, label in zip(v['x'], v['y']):
-          
+                for text, lab in zip(item, label[
