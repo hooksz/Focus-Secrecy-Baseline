@@ -155,4 +155,5 @@ class Reddit():
                 for text, lab in zip(item, label['target_tokens']):
                     text = self.clean_text(text)
                     datas.append(" ".join(text))
-             
+                    lab = lab[-1]
+                
