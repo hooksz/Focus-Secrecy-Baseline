@@ -156,4 +156,5 @@ class Reddit():
                     text = self.clean_text(text)
                     datas.append(" ".join(text))
                     lab = lab[-1]
-                
+                    labels.append(lab)
+                    user_ids.append
