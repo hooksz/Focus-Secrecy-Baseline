@@ -157,4 +157,5 @@ class Reddit():
                     datas.append(" ".join(text))
                     lab = lab[-1]
                     labels.append(lab)
-                    user_ids.append
+                    user_ids.append(i)
+                    subreddits.appen
