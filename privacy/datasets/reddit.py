@@ -158,4 +158,6 @@ class Reddit():
                     lab = lab[-1]
                     labels.append(lab)
                     user_ids.append(i)
-                    subreddits.appen
+                    subreddits.append(label['subreddit'])
+        
+        print(f"Loade
