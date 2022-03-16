@@ -160,4 +160,6 @@ class Reddit():
                     user_ids.append(i)
                     subreddits.append(label['subreddit'])
         
-        print(f"Loade
+        print(f"Loaded in {len(datas)} points.")
+
+        if args and a
