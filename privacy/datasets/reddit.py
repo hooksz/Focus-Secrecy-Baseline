@@ -162,4 +162,5 @@ class Reddit():
         
         print(f"Loaded in {len(datas)} points.")
 
-        if args and a
+        if args and args.dataset_subsize > 0:
+            cutoff
