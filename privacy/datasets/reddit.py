@@ -165,4 +165,5 @@ class Reddit():
         if args and args.dataset_subsize > 0:
             cutoff = args.dataset_subsize
             datas = datas[0:cutoff]
-            labels = labels[0:
+            labels = labels[0:cutoff]
+            user_ids = user
