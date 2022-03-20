@@ -166,4 +166,5 @@ class Reddit():
             cutoff = args.dataset_subsize
             datas = datas[0:cutoff]
             labels = labels[0:cutoff]
-            user_ids = user
+            user_ids = user_ids[0:cutoff]
+            subreddits 
