@@ -167,4 +167,6 @@ class Reddit():
             datas = datas[0:cutoff]
             labels = labels[0:cutoff]
             user_ids = user_ids[0:cutoff]
-            subreddits 
+            subreddits = subreddits[0:cutoff]
+
+        print(f"Using {len(datas)} p
