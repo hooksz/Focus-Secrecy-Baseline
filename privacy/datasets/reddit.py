@@ -169,4 +169,6 @@ class Reddit():
             user_ids = user_ids[0:cutoff]
             subreddits = subreddits[0:cutoff]
 
-        print(f"Using {len(datas)} p
+        print(f"Using {len(datas)} points.")
+
+        return datas, labels, user_ids, subre
