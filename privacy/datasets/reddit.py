@@ -171,4 +171,7 @@ class Reddit():
 
         print(f"Using {len(datas)} points.")
 
-        return datas, labels, user_ids, subre
+        return datas, labels, user_ids, subreddits, target2name_map
+
+
+    def remove_
