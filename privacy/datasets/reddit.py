@@ -174,4 +174,6 @@ class Reddit():
         return datas, labels, user_ids, subreddits, target2name_map
 
 
-    def remove_
+    def remove_prefix(self, pred, input):
+        ptr = 0
+     
