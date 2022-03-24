@@ -177,4 +177,5 @@ class Reddit():
     def remove_prefix(self, pred, input):
         ptr = 0
         for ind, c in enumerate(pred):
- 
+            if c == " ":
+           
