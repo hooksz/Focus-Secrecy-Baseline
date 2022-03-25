@@ -178,4 +178,6 @@ class Reddit():
         ptr = 0
         for ind, c in enumerate(pred):
             if c == " ":
-           
+                continue
+            elif ptr == len(input):
+  
