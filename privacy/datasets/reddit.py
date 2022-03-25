@@ -180,4 +180,5 @@ class Reddit():
             if c == " ":
                 continue
             elif ptr == len(input):
-  
+                break
+            elif input[ptr] =
