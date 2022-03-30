@@ -181,4 +181,6 @@ class Reddit():
                 continue
             elif ptr == len(input):
                 break
-            elif input[ptr] =
+            elif input[ptr] == c:
+                ptr += 1
+     
