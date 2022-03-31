@@ -185,4 +185,8 @@ class Reddit():
                 ptr += 1
             else:
                 break
-        pred = p
+        pred = pred[ind:] 
+        return pred
+
+
+    def compute_acc
