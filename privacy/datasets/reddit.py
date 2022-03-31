@@ -183,4 +183,6 @@ class Reddit():
                 break
             elif input[ptr] == c:
                 ptr += 1
-     
+            else:
+                break
+        pred = p
