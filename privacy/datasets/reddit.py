@@ -189,4 +189,5 @@ class Reddit():
         return pred
 
 
-    def compute_acc
+    def compute_accuracy(self, results, dataset, args):
+        scores
