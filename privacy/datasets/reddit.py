@@ -194,4 +194,5 @@ class Reddit():
         examples2preds = {}
         num_users = 0
 
-        punct = [".", "?", 
+        punct = [".", "?", "!", ","]
+        for i, (data, result, uid,
