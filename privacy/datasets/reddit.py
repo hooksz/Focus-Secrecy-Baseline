@@ -192,4 +192,6 @@ class Reddit():
     def compute_accuracy(self, results, dataset, args):
         scores = Counter()
         examples2preds = {}
-   
+        num_users = 0
+
+        punct = [".", "?", 
