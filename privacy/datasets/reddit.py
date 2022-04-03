@@ -190,4 +190,6 @@ class Reddit():
 
 
     def compute_accuracy(self, results, dataset, args):
-        scores
+        scores = Counter()
+        examples2preds = {}
+   
