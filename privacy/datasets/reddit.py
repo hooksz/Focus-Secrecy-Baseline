@@ -195,4 +195,5 @@ class Reddit():
         num_users = 0
 
         punct = [".", "?", "!", ","]
-        for i, (data, result, uid, reddit) in tqdm(enumerate(zip(dataset, results, se
+        for i, (data, result, uid, reddit) in tqdm(enumerate(zip(dataset, results, self.user_ids, self.subreddits))):
+         
