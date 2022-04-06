@@ -200,4 +200,5 @@ class Reddit():
             texts = data[0]
 
             examples2preds[i] = {
-               
+                "input": texts,
+                "pred": result,
