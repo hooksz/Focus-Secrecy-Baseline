@@ -202,3 +202,5 @@ class Reddit():
             examples2preds[i] = {
                 "input": texts,
                 "pred": result,
+                "gold": label,
+              
