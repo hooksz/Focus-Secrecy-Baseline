@@ -196,4 +196,7 @@ class Reddit():
 
         punct = [".", "?", "!", ","]
         for i, (data, result, uid, reddit) in tqdm(enumerate(zip(dataset, results, self.user_ids, self.subreddits))):
-         
+            label = data[1]
+            texts = data[0]
+
+        
