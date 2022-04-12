@@ -203,4 +203,6 @@ class Reddit():
                 "input": texts,
                 "pred": result,
                 "gold": label,
-              
+                "uid": uid,
+                "subreddit": reddit
+  
