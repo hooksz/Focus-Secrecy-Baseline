@@ -205,4 +205,7 @@ class Reddit():
                 "gold": label,
                 "uid": uid,
                 "subreddit": reddit
-  
+            }
+
+            # score
+            pred =  resu
