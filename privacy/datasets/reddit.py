@@ -212,4 +212,6 @@ class Reddit():
             pred = self.remove_prefix(pred, texts.replace(" ", ""))
             
             try:
-                pred = pr
+                pred = pred.split()[0]
+            except:
+                print
