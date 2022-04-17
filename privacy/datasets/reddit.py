@@ -209,4 +209,6 @@ class Reddit():
 
             # score
             pred =  result
-            pred = self.remove_prefix(pred, tex
+            pred = self.remove_prefix(pred, texts.replace(" ", ""))
+            
+  
