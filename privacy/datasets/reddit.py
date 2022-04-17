@@ -208,4 +208,5 @@ class Reddit():
             }
 
             # score
-            pred =  resu
+            pred =  result
+            pred = self.remove_prefix(pred, tex
