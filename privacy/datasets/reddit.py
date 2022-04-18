@@ -214,4 +214,5 @@ class Reddit():
             try:
                 pred = pred.split()[0]
             except:
-                print
+                print(texts, pred, label)
+                con
