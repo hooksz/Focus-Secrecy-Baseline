@@ -215,4 +215,6 @@ class Reddit():
                 pred = pred.split()[0]
             except:
                 print(texts, pred, label)
-                con
+                continue
+
+            # do not score pad examples  
