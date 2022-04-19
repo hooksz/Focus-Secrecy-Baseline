@@ -219,4 +219,6 @@ class Reddit():
 
             # do not score pad examples  
             if label == "<PAD>":
-      
+                continue
+                
+           
