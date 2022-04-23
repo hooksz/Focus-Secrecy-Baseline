@@ -221,4 +221,5 @@ class Reddit():
             if label == "<PAD>":
                 continue
                 
-            if label == "<EOS>" and pred in punct
+            if label == "<EOS>" and pred in punct[:-1]:
+                scores['correct'] += 1
