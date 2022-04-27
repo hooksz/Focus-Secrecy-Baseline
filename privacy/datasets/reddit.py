@@ -223,3 +223,6 @@ class Reddit():
                 
             if label == "<EOS>" and pred in punct[:-1]:
                 scores['correct'] += 1
+                continue
+
+            if len(pred
