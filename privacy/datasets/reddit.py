@@ -232,4 +232,6 @@ class Reddit():
             if pred.strip() != label.strip():
                 scores['incorrect'] += 1
             else:
-                scores['corr
+                scores['correct'] += 1
+
+        total_samples = scores['inc
