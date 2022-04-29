@@ -225,4 +225,6 @@ class Reddit():
                 scores['correct'] += 1
                 continue
 
-            if len(pred) > 1 and any(p in pred for p in punct
+            if len(pred) > 1 and any(p in pred for p in punct):
+                for p in punct:
+ 
