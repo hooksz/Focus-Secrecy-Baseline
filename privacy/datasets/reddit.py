@@ -227,4 +227,6 @@ class Reddit():
 
             if len(pred) > 1 and any(p in pred for p in punct):
                 for p in punct:
-                    pred = pred.str
+                    pred = pred.strip(p)
+                
+            if pred.strip() != 
