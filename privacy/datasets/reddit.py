@@ -230,4 +230,6 @@ class Reddit():
                     pred = pred.strip(p)
                 
             if pred.strip() != label.strip():
-                scores['incorrect'
+                scores['incorrect'] += 1
+            else:
+                scores['corr
