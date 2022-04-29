@@ -229,4 +229,5 @@ class Reddit():
                 for p in punct:
                     pred = pred.strip(p)
                 
-            if pred.strip() != 
+            if pred.strip() != label.strip():
+                scores['incorrect'
