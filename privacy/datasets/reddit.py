@@ -234,4 +234,6 @@ class Reddit():
             else:
                 scores['correct'] += 1
 
-        total_samples = scores['inc
+        total_samples = scores['incorrect'] + scores['correct']
+    
+        pr
