@@ -238,4 +238,6 @@ class Reddit():
     
         print(f"Num users {num_users}")
         print(f"Sample count {total_samples}")
-        print(f"Accuracy for {total_samples} samples -  {scores['cor
+        print(f"Accuracy for {total_samples} samples -  {scores['correct']/total_samples}")
+
+        results_dir 
