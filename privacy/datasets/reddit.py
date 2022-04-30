@@ -237,4 +237,5 @@ class Reddit():
         total_samples = scores['incorrect'] + scores['correct']
     
         print(f"Num users {num_users}")
-        pri
+        print(f"Sample count {total_samples}")
+        print(
