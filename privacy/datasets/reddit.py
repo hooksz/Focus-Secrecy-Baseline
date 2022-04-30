@@ -240,4 +240,5 @@ class Reddit():
         print(f"Sample count {total_samples}")
         print(f"Accuracy for {total_samples} samples -  {scores['correct']/total_samples}")
 
-        results_dir = f"{args.result_path}/{args.dataset}/
+        results_dir = f"{args.result_path}/{args.dataset}/"
+        if not os.path.exists(results_d
