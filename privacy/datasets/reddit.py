@@ -246,4 +246,4 @@ class Reddit():
 
         prompt_str = args.prompt_choice
         if "incontext" in args.prompt_choice:
-   
+            prompt_str += str(args.num_inconte
