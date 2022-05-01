@@ -244,4 +244,5 @@ class Reddit():
         if not os.path.exists(results_dir):
             os.makedirs(results_dir)
 
-       
+        prompt_str = args.prompt_choice
+        if "i
