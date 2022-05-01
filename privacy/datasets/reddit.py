@@ -245,4 +245,5 @@ class Reddit():
             os.makedirs(results_dir)
 
         prompt_str = args.prompt_choice
-        if "i
+        if "incontext" in args.prompt_choice:
+   
