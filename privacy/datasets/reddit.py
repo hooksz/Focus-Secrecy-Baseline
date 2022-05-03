@@ -246,4 +246,5 @@ class Reddit():
 
         prompt_str = args.prompt_choice
         if "incontext" in args.prompt_choice:
-            prompt_str += str(args.num_inconte
+            prompt_str += str(args.num_incontext)
+        with open(f"{results_dir}/
