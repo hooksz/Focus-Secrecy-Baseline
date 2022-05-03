@@ -247,4 +247,5 @@ class Reddit():
         prompt_str = args.prompt_choice
         if "incontext" in args.prompt_choice:
             prompt_str += str(args.num_incontext)
-        with open(f"{results_dir}/{args.paradigm}_{args.model}_{args.split}_{args.client_subsample}_{prompt_str}_example2preds.json", "w
+        with open(f"{results_dir}/{args.paradigm}_{args.model}_{args.split}_{args.client_subsample}_{prompt_str}_example2preds.json", "w") as f:
+            json.dump(examples2p
