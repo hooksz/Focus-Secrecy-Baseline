@@ -250,4 +250,4 @@ class Reddit():
         with open(f"{results_dir}/{args.paradigm}_{args.model}_{args.split}_{args.client_subsample}_{prompt_str}_example2preds.json", "w") as f:
             json.dump(examples2preds, f)
 
-        print(f"Saved results to: {r
+        print(f"Saved results to: {results_dir}/{args.paradigm}_{args.model}_{args
