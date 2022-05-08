@@ -1,0 +1,23 @@
+
+from __future__ import print_function
+import warnings
+import os
+import os.path
+import json
+import csv
+import sys
+import h5py
+import random
+from collections import defaultdict, Counter
+from tqdm import tqdm
+import argparse
+import torch
+
+class Sent140(torch.utils.data.Dataset):
+
+    classes = []
+
+    @property
+    def train_labels(self):
+        warnings.warn("train_labels has been renamed targets")
+        return self.targets
