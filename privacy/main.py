@@ -64,3 +64,46 @@ def get_args():
 
     parser.add_argument('--embeddings_dir', 
                         default=f'/embeddings/',
+                        type=str)
+
+    parser.add_argument("--root_dir",
+                        default= "",
+                        type=str,
+                        help="path to the outer privacy directory")
+    
+    parser.add_argument("--public_datasets_prefix",
+                        default= "benchmarks/",
+                        type=str,
+                        help="path to downloaded datasets")
+    
+    args = parser.parse_args()
+    return args
+
+def main():
+    # set arguments
+    args = get_args()
+
+    cache_dir = f"./{args.cache_dir}"
+    if not os.path.exists(cache_dir):
+        os.makedirs(cache_dir)
+    args.cache_dir = cache_dir
+
+    embeddings_dir = f"./{args.embeddings_dir}"
+    if not os.path.exists(embeddings_dir):
+        os.makedirs(embeddings_dir)
+    args.embeddings_dir = embeddings_dir
+
+    result_path = f"./{args.result_path}"
+    if not os.path.exists(result_path):
+        os.makedirs(result_path)
+    args.result_path = result_path
+
+    # load data and foundation model
+    training_dataset, test_dataset, model = initialize_run(args)
+
+    # set seeds
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    set_seed(args.seed)
+    
