@@ -61,3 +61,43 @@ class Sent140(torch.utils.data.Dataset):
         fpath= ""
 
         return input, target, fpath, index, uid
+
+    def __len__(self):
+        return len(self.data)
+
+    def _check_exists(self):
+        return (os.path.exists(os.path.join(self.data_path)))
+
+
+    def get_incontext_examples(self, args, training_dataset):
+        # for in context random
+        if "incontext" in args.prompt_choice:
+
+            # first collect incontext examples using the desired strategy
+            if args.prompt_choice == "random_incontext":
+                training_users2sents = defaultdict(list)
+            elif args.prompt_choice == "random_incontext_noprivacy":
+                training_sents = []
+                training_users2counts = defaultdict(int)
+            else:
+                training_users2sents = defaultdict(dict)
+            for data, label, uid in zip(training_dataset.data, training_dataset.targets, training_dataset.user_ids):
+                label_str = self.index2label[label]
+                example = {
+                    "input": data,
+                    "label": label_str
+                }
+
+                # collect by user in aggregate
+                if args.prompt_choice == "random_incontext": 
+                    training_users2sents[uid].append(example)
+                
+                # no privacy, combine all user examples
+                elif args.prompt_choice == "random_incontext_noprivacy":
+                    training_sents.append(example)
+                    training_users2counts[uid] += 1
+                else:
+                    assert 0, print("Unsupported in-context example selection strategy")
+
+            # next assign in context examples to training examples
+            test2examples = []
