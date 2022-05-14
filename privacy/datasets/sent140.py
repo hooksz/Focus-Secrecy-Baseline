@@ -101,3 +101,46 @@ class Sent140(torch.utils.data.Dataset):
 
             # next assign in context examples to training examples
             test2examples = []
+            test2prompts = []
+            test2endings = []
+            if args.prompt_choice == "random_incontext_noprivacy":
+                random.seed(0)
+            for data, uid in zip(self.data, self.user_ids):
+                # get the incontext examples
+                if args.prompt_choice == "random_incontext_noprivacy":
+                    user_count = training_users2counts[uid]
+                    user_entry = random.sample(training_sents, min(user_count, args.num_incontext))
+                else:
+                    train_sents = training_users2sents[uid]
+                    if args.prompt_choice == "random_incontext":
+                        user_entry = train_sents[0:args.num_incontext]
+                    else:
+                        assert 0, print("Unsupported in-context example selection strategy")
+                user_text = [f"""{entry['input']}\nSentiment:{entry['label']}\n\n#####\n\n""" for entry in user_entry]
+
+                # clean
+                user_text = " ".join(user_text).replace("<PAD> ", "").replace("<PAD>", "")
+                user_text = user_text.replace("<EOS>", "")
+                user_text = user_text.replace(" . ", " ")
+                user_text = user_text.replace("  ", " ")
+                user_text = user_text.replace("\t", " ")
+
+                user_text = f"Is the sentiment positive or negative?\n\n{user_text}"
+
+                test2examples.append(f"""{user_text}{data}\nSentiment:""")
+                test2prompts.append(f"""{user_text}""")
+                test2endings.append(f"""{data}\nSentiment:""")
+            self.data = test2examples
+            self.test2prompts = test2prompts
+            self.test2endings = test2endings
+
+        else:
+            self.test2prompts = [""]*len(self.data)
+
+
+    def get_prompt(self, input="", incontext={}):
+        if "t0" in self.model_name:
+            base_prompt = f"Is this text positive or negative? Text: {input}"
+        elif "gpt" in self.model_name:
+            if "instruction" in self.prompt_choice:
+                self.prompt_prefix = "Is the sentiment positive or negative?\n\n"
