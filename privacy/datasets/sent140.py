@@ -185,3 +185,54 @@ Sentence: """
         datas, labels = [], []
         user_ids = []
         target2name_map = {}
+
+        random.seed(args.seed)
+
+        client_subsample = args.client_subsample
+        for i, (k, v) in tqdm(enumerate(data['user_data'].items())):
+            r = random.random()
+            if r > client_subsample:
+                continue
+            for item, label in zip(v['x'], v['y']):
+                text = item[4]
+                datas.append(text)
+                labels.append(label)
+                user_ids.append(i)
+
+            if args and args.dataset_subsize > 0: 
+                if i == args.dataset_subsize:
+                    break
+        
+        print(f"Loaded in {len(datas)} points.")
+
+        return datas, labels, user_ids, target2name_map
+
+
+    def score_gpt(self, example2preds, remove_prefix=False, prompt_prefix="", fp=""):
+        count = 0
+        correct = 0
+        predictions = Counter()
+        punct = [",", ".", "?", "!"]
+        users2accuracy = defaultdict(dict)
+        for i, (key, value) in enumerate(example2preds.items()):
+            if remove_prefix:
+                rawpred = value['rawpred']
+            else:
+                rawpred = value['pred']
+            label = value['gold']
+            input = value['input']
+
+            if remove_prefix:
+                # conversion
+                if "instruction_prompt" in fp:
+                    rawpred = rawpred.replace(self.prompt_prefix, "")
+                    rawpred = rawpred.replace(input, "")
+                elif "incontext" in fp:
+                    prompt_prefix = value['prompt']
+                    ending = self.test2endings[i]
+                    prompt_idx = rawpred.index(ending)
+                    rawpred = rawpred[prompt_idx+len(ending):]
+                rawpred = rawpred.replace("Sentiment: ", "")
+                rawpred = rawpred.replace("\t", " ")
+                rawpred = rawpred.replace("\n", " ")
+                rawpred = rawpred.strip()
