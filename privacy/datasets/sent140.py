@@ -236,3 +236,39 @@ Sentence: """
                 rawpred = rawpred.replace("\t", " ")
                 rawpred = rawpred.replace("\n", " ")
                 rawpred = rawpred.strip()
+                rawpred = rawpred.split()
+                if rawpred:
+                    rawpred = rawpred[0]
+                else:
+                    rawpred = ""
+            
+            # cleaning
+            if len(rawpred.split()) > 1:
+                rawpred = rawpred.split()[0]
+            rawpred = rawpred.lower()
+            for p in punct:
+                rawpred = rawpred.strip(p) 
+            rawpred = rawpred.strip(" ") 
+            rawpred = rawpred.strip("\t")
+            rawpred = rawpred.strip("\n")
+            rawpred = rawpred.strip("#")
+            
+            # mapping
+            if rawpred == "positive" or rawpred in ["good", "happy", "1"]:
+                pred = 1
+            elif rawpred == "negative" or rawpred in ["bad", "sad", "0"]:
+                pred = 0
+            else:
+                pred = rawpred
+                predictions[pred] += 1
+            
+            error = pred == label
+            correct += error
+            count += 1
+
+            if "uid" in value and value['uid'] not in users2accuracy:
+                users2accuracy[value['uid']] = {
+                    "correct": 0,
+                    "count": 0,
+                    "prompt": [],
+                    "pred": []
