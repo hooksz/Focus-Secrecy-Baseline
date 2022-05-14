@@ -319,3 +319,31 @@ Sentence: """
                 "pred": pred,
                 "gold": label,
                 "rawpred": result,
+                "prompt": prompt,
+                "uid": uid
+            }
+
+        # gpt requires removing the prompt prefix based on how it's decoded
+        if "gpt" in self.model_name:
+            self.score_gpt(examples2preds, remove_prefix=True, fp=args.prompt_choice)
+
+        else:
+            total_samples = scores['incorrect'] + scores['correct']
+        
+            print(f"Num users {num_users}")
+            print(f"Sample count {total_samples}")
+            print(f"Accuracy for {total_samples} samples -  {scores['correct']/total_samples}")
+
+        results_dir = f"{args.result_path}/{args.dataset}/"
+        if not os.path.exists(results_dir):
+            os.makedirs(results_dir)
+
+        prompt_str = args.prompt_choice
+        if "incontext" in args.prompt_choice:
+            prompt_str += str(args.num_incontext)
+        fpath = f"{results_dir}/{args.paradigm}_{args.model}_{args.split}_sample{args.client_subsample}_{prompt_str}_example2preds.json"
+        with open(fpath, "w") as f:
+            json.dump(examples2preds, f)
+
+        print(f"Saved results to: {fpath}")
+    
