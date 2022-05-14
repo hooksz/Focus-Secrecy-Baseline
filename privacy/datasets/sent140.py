@@ -272,3 +272,50 @@ Sentence: """
                     "count": 0,
                     "prompt": [],
                     "pred": []
+                }
+            if "uid" in value:
+                users2accuracy[value['uid']]['correct'] += error
+                users2accuracy[value['uid']]['count'] += 1
+                users2accuracy[value['uid']]['prompt'].append(input)
+                users2accuracy[value['uid']]['pred'].append(f"Pred: {pred}, Label: {label}")
+            
+        acc= correct/count
+        if fp:
+            print(fp)
+        print(f"Accuracy: %.3f (%d correct) for %d examples\n" % (acc, correct, count))
+        return acc, users2accuracy
+
+
+    def compute_accuracy(self, results, dataset, args):
+        scores = Counter()
+        examples2preds = {}
+        num_users = 0
+        
+        for i, (data, result, uid, prompt) in tqdm(enumerate(zip(dataset, results, self.user_ids, self.test2prompts))):
+            label = data[1]
+            texts = data[0]
+            
+            # t0 scoring
+            if 1:
+                if label == 0 and "negative" in result.lower():
+                    pred = 0
+                    scores['correct'] += 1
+                elif label == 1 and "positive" in result.lower():
+                    pred = 1
+                    scores['correct'] += 1
+                elif label == 0 and "positive" in result.lower():
+                    pred = 1
+                    scores['incorrect'] += 1
+                elif label == 1 and "negative" in result.lower():
+                    pred = 0
+                    scores['incorrect'] += 1
+                else:
+                    pred = result
+            if i >= len(results):
+                break
+
+            examples2preds[i] = {
+                "input": texts,
+                "pred": pred,
+                "gold": label,
+                "rawpred": result,
