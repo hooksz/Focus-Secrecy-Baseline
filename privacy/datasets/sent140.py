@@ -144,3 +144,44 @@ class Sent140(torch.utils.data.Dataset):
         elif "gpt" in self.model_name:
             if "instruction" in self.prompt_choice:
                 self.prompt_prefix = "Is the sentiment positive or negative?\n\n"
+                base_prompt = f"{self.prompt_prefix}{input}\nSentiment:"
+            else:
+                prompt_prefix = ""
+                self.prompt_prefix = prompt_prefix
+                base_prompt = f"""{prompt_prefix}{input}"""
+            
+        
+        # For the experiment with the "public prompt api"; construct the base prompt using this to reproduce
+        public_prompt_prefix = f"""
+Sentence: This painting is very nice, the artist is talented.
+Sentiment: positive
+
+#####
+
+Sentence: I hated this restaurant, the food smelled bad.
+Sentiment: negative
+
+#####
+
+Sentence: He was so annoying, his voice was way too loud.
+Sentiment: negative
+
+#####
+
+Sentence: This movie was actually pretty funny.
+Sentiment: positive
+
+#####
+
+Sentence: """
+
+        return base_prompt
+
+
+    def load_meta_data(self, args, data_path, split="train"):
+        with open(data_path) as f:
+            data = json.load(f)
+
+        datas, labels = [], []
+        user_ids = []
+        target2name_map = {}
