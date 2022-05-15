@@ -107,3 +107,31 @@ def main():
     torch.manual_seed(args.seed)
     set_seed(args.seed)
     
+    # run zero-to-few shot adaptation process
+    if args.paradigm == "prompt":
+        if args.model in ['gpt175', 'gpt6.7']:
+            assert args.split != "train", print("Unsupported option --- feel free to modify the code if you wish to run on the train split")
+            run_api_inference(args, test_dataset)
+        elif args.split == "test":
+            run_prompt_classification(args, model, test_dataset)
+        else:
+            run_prompt_classification(args, model, training_dataset)
+
+    elif args.paradigm == "similarity":
+
+        if training_dataset.modality == "nlp":
+            if args.split == "test":
+                run_similarity_classification(args, model, test_dataset)
+            else:
+                run_similarity_classification(args, model, training_dataset)
+        elif training_dataset.modality == "image":
+            if args.split == "test": 
+                run_image_similarity_classification(args, model, test_dataset, training_dataset)
+            else:
+                run_image_similarity_classification(args, model, training_dataset)
+    else:
+        assert 0, print("Unsupported option")
+
+
+if __name__ == '__main__':
+    main()
