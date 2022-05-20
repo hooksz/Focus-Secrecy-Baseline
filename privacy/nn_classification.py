@@ -75,3 +75,36 @@ def get_dataset_embeddings(args, sentences, queries_lst, model):
     embedding_fname = f'd={args.dataset}-s={args.split}-m={args.model}-seed{args.seed}.pt'
     embedding_path = os.path.join(embeddings_dir, embedding_fname)
     if os.path.exists(embedding_path):
+        print(f'-> Retrieving image embeddings from {embedding_path}!')
+        senetnce_embeddings = torch.load(embedding_path)
+        label_embeddings = model.encode(queries_lst)
+        return torch.load(embedding_path), label_embeddings
+
+    if args.model == "dpr":
+        label_embeddings = model.encode(queries_lst)
+        sentence_embeddings = model.encode(sentences)
+    else:
+        tokenizer_kwargs = {
+            'padding':'max_length',
+            'truncation':True,
+            'length':1024,
+        }
+        pipe = pipeline('feature-extraction', model=model, tokenizer=tokenizer, device=0)
+        sentence_text = [sent['text'] for sent in sentences]
+        label_embeddings = pipe(queries_lst, **tokenizer_kwargs)
+        label_embeddings = torch.vstack([torch.tensor(e[0]).float().cpu().mean(dim=0) for e in label_embeddings])
+        label_embeddings /= label_embeddings.norm(dim=-1, keepdim=True)
+        sentence_embeddings = pipe(sentence_text, **tokenizer_kwargs)
+        sentence_embeddings = torch.vstack([torch.tensor(e[0]).float().cpu().mean(dim=0) for e in sentence_embeddings])
+        sentence_embeddings /= sentence_embeddings.norm(dim=-1, keepdim=True)
+    
+    # Save to disk
+    if not os.path.exists(embeddings_dir):
+        os.makedirs(embeddings_dir)
+    torch.save(torch.Tensor(sentence_embeddings), embedding_path)
+    print(f'-> Saved embeddings to {embedding_path}!')
+    return sentence_embeddings, label_embeddings
+
+
+def run_similarity_classification(args, model, dataset):
+    sentences, queries_lst = prepare_data(dataset)
