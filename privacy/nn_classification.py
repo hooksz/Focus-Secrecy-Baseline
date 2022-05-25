@@ -108,3 +108,12 @@ def get_dataset_embeddings(args, sentences, queries_lst, model):
 
 def run_similarity_classification(args, model, dataset):
     sentences, queries_lst = prepare_data(dataset)
+
+    print("Generating embeddings...")
+    sentence_embeddings, label_embeddings = get_dataset_embeddings(args, sentences, queries_lst, model)
+    predictions = get_zeroshot_predictions(np.array(sentence_embeddings), np.array(label_embeddings))
+    index2label = dataset.index2label
+    queries_text = [v for k, v in index2label.items()]
+    save_results(args, sentences, predictions, index2label, queries_text)
+
+    
