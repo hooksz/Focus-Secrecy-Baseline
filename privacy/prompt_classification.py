@@ -41,3 +41,28 @@ def run_prompt_classification(args, model, dataset):
                 batch_labels.append(label)
                 if len(to_encode) == batch_size or (len(results) + len(to_encode) == len(dataset)):
                     inputs = dataset.tokenizer(to_encode, return_tensors="pt", truncation=True, padding=True)
+                    if args.use_gpu:
+                        inputs.to(args.device)
+                    if "t0" in args.model:
+                        outputs = model.generate(**inputs)
+                        results.extend(dataset.tokenizer.batch_decode(outputs, skip_special_tokens=True))
+                    elif "gpt" in args.model:
+                        outputs = model.generate(inputs.input_ids,do_sample=True,temperature=0.9,max_length=args.max_sequence_length)
+                        results.extend(dataset.tokenizer.batch_decode(outputs, skip_special_tokens=True))
+                    if args.use_gpu:
+                        outputs.detach().cpu()
+                    if len(results) == len(to_encode):
+                        print("\nPrinting example prompt completions: ")
+                        for prompt, output, label in zip(to_encode, results, batch_labels):
+                            try:
+                                label = int(label)
+                                print(f"Prompt: {prompt}\nOutput: {output}\nLabel: {dataset.index2label[label]}\n\n")
+                            except:
+                                print(f"Prompt: {prompt}\nOutput: {output}\nLabel: {label}\n\n")
+                        print()
+                        print(f"Data loader length: {len(dataloader)}\n")
+                    to_encode = []
+
+            if not args.use_gpu and bix % 50 == 0:
+                dataset.compute_accuracy(results, dataset, args)
+        dataset.compute_accuracy(results, dataset, args)
