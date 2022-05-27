@@ -67,3 +67,8 @@ def run_api_inference(args, dataset):
         print(f"Saved API inference results to path: {expt_path}")
 
     # score the results
+    results = []
+    for ex in examples:
+        if 'pred' in ex:
+            results.append(ex['pred'])
+    dataset.compute_accuracy(results, dataset, args)
