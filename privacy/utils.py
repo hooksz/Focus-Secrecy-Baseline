@@ -14,4 +14,4 @@ from collections import defaultdict
 from tqdm import tqdm
 from torchvision import datasets, transforms
 
-from sente
+from sentence_transformers import SentenceTransformer, u
