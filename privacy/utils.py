@@ -24,4 +24,5 @@ from privacy.clip import clip
 from PIL import Image
 import glob
 
-from privac
+from privacy.datasets.celeba import CelebA
+from pr
