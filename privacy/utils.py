@@ -35,4 +35,6 @@ API_MODELS = ["gpt175", "gpt6.7"]
 
 def get_model(args):
     print("Loading model...")
-    if "clip" in arg
+    if "clip" in args.model:
+        if args.model == "clip32B":
+            clip
