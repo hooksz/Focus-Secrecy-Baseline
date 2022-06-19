@@ -37,4 +37,5 @@ def get_model(args):
     print("Loading model...")
     if "clip" in args.model:
         if args.model == "clip32B":
-            clip
+            clip_variant = "ViTB32"
+        elif args.model == "clip16
