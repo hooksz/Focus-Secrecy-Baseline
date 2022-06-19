@@ -26,4 +26,5 @@ import glob
 
 from privacy.datasets.celeba import CelebA
 from privacy.datasets.sent140 import Sent140
-from
+from privacy.datasets.news20 import News20
+from p
