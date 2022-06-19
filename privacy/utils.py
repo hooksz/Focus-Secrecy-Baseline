@@ -30,4 +30,8 @@ from privacy.datasets.news20 import News20
 from privacy.datasets.femnist import FEMNIST
 from privacy.datasets.reddit import Reddit
 
-API_MODELS = ["gpt175
+API_MODELS = ["gpt175", "gpt6.7"]
+
+
+def get_model(args):
+    
