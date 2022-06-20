@@ -40,4 +40,5 @@ def get_model(args):
             clip_variant = "ViTB32"
         elif args.model == "clip16B":
             clip_variant = "ViTB16"
-        elif 
+        elif args.model == "clip336":
+            clip_variant =
