@@ -42,4 +42,6 @@ def get_model(args):
             clip_variant = "ViTB16"
         elif args.model == "clip336":
             clip_variant = "ViTL14"
-        elif args.model == "clipres
+        elif args.model == "clipres101":
+            clip_variant = "RN101"
+        
