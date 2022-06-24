@@ -46,4 +46,5 @@ def get_model(args):
             clip_variant = "RN101"
         else:
             assert 0, print("Unsupported clip variant")
-        device = "cuda" if torch
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        model
