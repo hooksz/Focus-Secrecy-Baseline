@@ -45,4 +45,5 @@ def get_model(args):
         elif args.model == "clipres101":
             clip_variant = "RN101"
         else:
-            assert 0, print("Unsupported clip
+            assert 0, print("Unsupported clip variant")
+        device = "cuda" if torch
