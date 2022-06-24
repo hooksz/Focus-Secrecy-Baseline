@@ -51,4 +51,5 @@ def get_model(args):
         tokenizer = None
     elif args.model == "dpr":
         tokenizer = None
- 
+        transform = None
+        model = SentenceTransforme
