@@ -44,4 +44,5 @@ def get_model(args):
             clip_variant = "ViTL14"
         elif args.model == "clipres101":
             clip_variant = "RN101"
-        
+        else:
+            assert 0, print("Unsupported clip
