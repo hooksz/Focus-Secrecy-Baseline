@@ -47,4 +47,6 @@ def get_model(args):
         else:
             assert 0, print("Unsupported clip variant")
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        model, transform = clip.load(clip_variant, device=
+        model, transform = clip.load(clip_variant, device=device)
+        tokenizer = None
+    elif args.
