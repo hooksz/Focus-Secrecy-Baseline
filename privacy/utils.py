@@ -52,4 +52,5 @@ def get_model(args):
     elif args.model == "dpr":
         tokenizer = None
         transform = None
-        model = SentenceTransforme
+        model = SentenceTransformer(("multi-qa-mpnet-base-dot-v1"))
+  
