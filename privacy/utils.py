@@ -49,4 +49,6 @@ def get_model(args):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         model, transform = clip.load(clip_variant, device=device)
         tokenizer = None
-    elif args.
+    elif args.model == "dpr":
+        tokenizer = None
+ 
