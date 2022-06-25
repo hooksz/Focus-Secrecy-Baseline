@@ -63,4 +63,5 @@ def get_model(args):
         else:
             assert 0, print("Unsupported t0 variant.")
         tokenizer = AutoTokenizer.from_pretrained(t0_variant, cache_dir=args.cache_dir)
-        tokenizer.p
+        tokenizer.padding_side = "left"
+        model = AutoModelForSeq2S
