@@ -57,4 +57,5 @@ def get_model(args):
         # T0 3Bn Model
         transform = None 
         if args.model == "t0pp":
-            t0_variant = "bigscien
+            t0_variant = "bigscience/T0pp"
+        elif args.model 
