@@ -61,4 +61,5 @@ def get_model(args):
         elif args.model == "t03b":
             t0_variant = "bigscience/T0_3B"
         else:
-            assert 0, print(
+            assert 0, print("Unsupported t0 variant.")
+        tokeniz
