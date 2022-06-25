@@ -54,4 +54,6 @@ def get_model(args):
         transform = None
         model = SentenceTransformer(("multi-qa-mpnet-base-dot-v1"))
     elif "t0" in args.model:
-        # T0 3B
+        # T0 3Bn Model
+        transform = None 
+        if 
