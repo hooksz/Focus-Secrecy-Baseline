@@ -59,4 +59,6 @@ def get_model(args):
         if args.model == "t0pp":
             t0_variant = "bigscience/T0pp"
         elif args.model == "t03b":
-            t0_variant = "bigscience/
+            t0_variant = "bigscience/T0_3B"
+        else:
+            assert 0, print(
