@@ -62,4 +62,5 @@ def get_model(args):
             t0_variant = "bigscience/T0_3B"
         else:
             assert 0, print("Unsupported t0 variant.")
-        tokenizer = AutoTokenizer.from_pretrained(t0_
+        tokenizer = AutoTokenizer.from_pretrained(t0_variant, cache_dir=args.cache_dir)
+        tokenizer.p
