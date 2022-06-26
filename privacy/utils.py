@@ -64,4 +64,6 @@ def get_model(args):
             assert 0, print("Unsupported t0 variant.")
         tokenizer = AutoTokenizer.from_pretrained(t0_variant, cache_dir=args.cache_dir)
         tokenizer.padding_side = "left"
-        model = AutoModelForSeq2SeqLM.from_pretrained(t0_variant, cache_dir=args
+        model = AutoModelForSeq2SeqLM.from_pretrained(t0_variant, cache_dir=args.cache_dir)
+    elif "gpt" in args.model:
+      
