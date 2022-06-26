@@ -66,4 +66,6 @@ def get_model(args):
         tokenizer.padding_side = "left"
         model = AutoModelForSeq2SeqLM.from_pretrained(t0_variant, cache_dir=args.cache_dir)
     elif "gpt" in args.model:
-      
+        transform = None
+
+        if args.model in API_MODEL
