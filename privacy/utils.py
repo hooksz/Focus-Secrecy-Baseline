@@ -68,4 +68,7 @@ def get_model(args):
     elif "gpt" in args.model:
         transform = None
 
-        if args.model in API_MODEL
+        if args.model in API_MODELS:
+            return None, None, None 
+
+   
