@@ -80,4 +80,4 @@ def get_model(args):
         else:
             assert 0, print("Unsupported gpt variant.")
 
-     
+        tokenizer = AutoTokenizer.from_pretrained(gpt_varian
