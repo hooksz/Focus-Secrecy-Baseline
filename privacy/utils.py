@@ -74,4 +74,5 @@ def get_model(args):
         if args.model == "gpt2.7":
              gpt_variant = 'EleutherAI/gpt-neo-2.7B'
         elif args.model == "gpt1.3":
-            gpt_variant
+            gpt_variant = 'EleutherAI/gpt-neo-1.3B'
+   
