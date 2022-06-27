@@ -71,4 +71,5 @@ def get_model(args):
         if args.model in API_MODELS:
             return None, None, None 
 
-   
+        if args.model == "gpt2.7":
+             gpt_va
