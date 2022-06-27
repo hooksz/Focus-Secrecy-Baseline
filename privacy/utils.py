@@ -72,4 +72,5 @@ def get_model(args):
             return None, None, None 
 
         if args.model == "gpt2.7":
-             gpt_va
+             gpt_variant = 'EleutherAI/gpt-neo-2.7B'
+   
