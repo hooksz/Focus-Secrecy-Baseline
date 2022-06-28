@@ -86,4 +86,5 @@ def get_model(args):
             pad_token_id=tokenizer.eos_token_id, 
             cache_dir=args.cache_dir
         )
-        tokenizer.pad_token = tokenizer
+        tokenizer.pad_token = tokenizer.eos_token
+        tokenizer.padding_side = 'le
