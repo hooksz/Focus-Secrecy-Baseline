@@ -89,4 +89,4 @@ def get_model(args):
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.padding_side = 'left'
     elif "bert" in args.model:
-        tokenizer 
+        tokenizer = AutoTokenizer.from_pretrained(args.model
