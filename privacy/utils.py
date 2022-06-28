@@ -85,4 +85,5 @@ def get_model(args):
             gpt_variant, 
             pad_token_id=tokenizer.eos_token_id, 
             cache_dir=args.cache_dir
-       
+        )
+        tokenizer.pad_token = tokenizer
