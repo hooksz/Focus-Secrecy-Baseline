@@ -83,4 +83,4 @@ def get_model(args):
         tokenizer = AutoTokenizer.from_pretrained(gpt_variant, max_token_length=512, cache_dir=args.cache_dir)
         model = AutoModelForCausalLM.from_pretrained(
             gpt_variant, 
-  
+            pad_token_id=tokenizer.eos_token_id,
