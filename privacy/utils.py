@@ -87,4 +87,6 @@ def get_model(args):
             cache_dir=args.cache_dir
         )
         tokenizer.pad_token = tokenizer.eos_token
-        tokenizer.padding_side = 'le
+        tokenizer.padding_side = 'left'
+    elif "bert" in args.model:
+        tokenizer 
