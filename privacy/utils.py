@@ -93,4 +93,7 @@ def get_model(args):
         transform = None
         model = None
     else:
-        assert 0, 
+        assert 0, print("Unsupported model.")
+
+    if args.use_gpu:
+   
