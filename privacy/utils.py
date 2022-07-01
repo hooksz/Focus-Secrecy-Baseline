@@ -96,4 +96,9 @@ def get_model(args):
         assert 0, print("Unsupported model.")
 
     if args.use_gpu:
-        model = model.to(args.device
+        model = model.to(args.device)
+
+    return model, transform, tokenizer
+
+
+def get_datase
