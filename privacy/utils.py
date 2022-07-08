@@ -106,4 +106,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     dataset = args.dataset
 
     if dataset == "sent140":
-        data_prefix = f"{args.p
+        data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
+     
