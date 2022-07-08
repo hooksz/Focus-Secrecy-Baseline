@@ -105,4 +105,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     print("\nLoading dataset...")
     dataset = args.dataset
 
-    if dataset 
+    if dataset == "sent140":
+        data_prefix = f"{args.p
