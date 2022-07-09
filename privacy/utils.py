@@ -110,4 +110,4 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         data_path = f"{data_prefix}/sent140/data/train/all_data_niid_0_keep_0_train_9.json"
         training_dataset = Sent140(data_path, args, dataset="train")
 
-        da
+        data_path = f"{data_prefix}/sent140/data/te
