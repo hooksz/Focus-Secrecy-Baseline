@@ -112,4 +112,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
 
         data_path = f"{data_prefix}/sent140/data/test/all_data_niid_0_keep_0_test_9.json"
         test_dataset = Sent140(data_path, args, dataset="test")
-        test_dataset.get_i
+        test_dataset.get_incontext_examples(args, training_dataset)
+
+        training
