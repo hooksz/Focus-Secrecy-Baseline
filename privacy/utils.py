@@ -108,4 +108,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     if dataset == "sent140":
         data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
         data_path = f"{data_prefix}/sent140/data/train/all_data_niid_0_keep_0_train_9.json"
-        training_dataset = Sent140(da
+        training_dataset = Sent140(data_path, args, dataset="train")
+
+        da
