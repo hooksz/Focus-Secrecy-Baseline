@@ -115,4 +115,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.get_incontext_examples(args, training_dataset)
 
         training_dataset.tokenizer = tokenizer
-        training_dataset.transform = trans
+        training_dataset.transform = transform
+        test_dataset.tokenizer = tokenizer
