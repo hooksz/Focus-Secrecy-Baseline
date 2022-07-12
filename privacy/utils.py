@@ -118,3 +118,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset.transform = transform
         test_dataset.tokenizer = tokenizer
         test_dataset.transform = transform
+
+    elif dataset == "reddit":
