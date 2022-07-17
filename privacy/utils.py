@@ -122,4 +122,4 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     elif dataset == "reddit":
         data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
         data_path = f"{data_prefix}/reddit/data/train/train_data.json"
- 
+        training_dataset = Reddit(data_pa
