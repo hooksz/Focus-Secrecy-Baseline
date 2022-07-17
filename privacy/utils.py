@@ -124,4 +124,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         data_path = f"{data_prefix}/reddit/data/train/train_data.json"
         training_dataset = Reddit(data_path, args, dataset="train")
 
-        dat
+        data_path = f"{data_prefix}/reddit/data/test/test_data.json"
+ 
