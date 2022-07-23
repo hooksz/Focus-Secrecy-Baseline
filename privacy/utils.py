@@ -126,4 +126,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
 
         data_path = f"{data_prefix}/reddit/data/test/test_data.json"
         test_dataset = Reddit(data_path, args, dataset="test")
-        test_dataset.get_
+        test_dataset.get_incontext_examples(args, training_dataset)
+
+        training
