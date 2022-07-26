@@ -128,4 +128,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset = Reddit(data_path, args, dataset="test")
         test_dataset.get_incontext_examples(args, training_dataset)
 
-        training
+        training_dataset.tokenizer = tokenizer
+        training_dataset.transform 
