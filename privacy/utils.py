@@ -135,4 +135,4 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
 
     elif dataset == "celeba":
         data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
-        data_path = f
+        data_path = f"{data_prefix}/celeba/data/train/all_data_niid_0_ke
