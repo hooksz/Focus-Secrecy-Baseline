@@ -134,4 +134,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.transform = transform
 
     elif dataset == "celeba":
-        data_prefix = f"{args.public_datase
+        data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
+        data_path = f
