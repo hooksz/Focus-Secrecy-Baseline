@@ -138,4 +138,4 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         data_path = f"{data_prefix}/celeba/data/train/all_data_niid_0_keep_0_train_9.json"
         training_dataset = CelebA(f'{data_path}', args, dataset="train") 
 
-        data_path = f"{data_pref
+        data_path = f"{data_prefix}/celeba/data/test/all_data_niid_0_keep_0_tes
