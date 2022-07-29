@@ -146,4 +146,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset.tokenizer = tokenizer
         training_dataset.transform = transform
         test_dataset.tokenizer = tokenizer
-        test_d
+        test_dataset.transform = transform
+
+    el
