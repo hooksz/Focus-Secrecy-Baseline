@@ -142,4 +142,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset = CelebA(f'{data_path}', args, dataset="test") 
         
         if not transform:
-            transform = torch
+            transform = torchvision.transforms.ToTensor()
+        traini
