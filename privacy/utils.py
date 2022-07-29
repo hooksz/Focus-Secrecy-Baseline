@@ -145,4 +145,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             transform = torchvision.transforms.ToTensor()
         training_dataset.tokenizer = tokenizer
         training_dataset.transform = transform
-        test
+        test_dataset.tokenizer = tokenizer
+        test_d
