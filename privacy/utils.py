@@ -140,4 +140,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
 
         data_path = f"{data_prefix}/celeba/data/test/all_data_niid_0_keep_0_test_9.json"
         test_dataset = CelebA(f'{data_path}', args, dataset="test") 
-     
+        
+        if not transform:
+            transform = torch
