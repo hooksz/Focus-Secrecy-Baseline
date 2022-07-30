@@ -149,4 +149,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.transform = transform
 
     elif dataset == "femnist":
-        data_prefi
+        data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
+    
