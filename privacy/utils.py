@@ -151,4 +151,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     elif dataset == "femnist":
         data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
         train_transform = transform
-        test_t
+        test_transform = transform
+        data_p
