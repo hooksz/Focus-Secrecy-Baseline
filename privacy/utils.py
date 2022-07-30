@@ -148,4 +148,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.tokenizer = tokenizer
         test_dataset.transform = transform
 
-    el
+    elif dataset == "femnist":
+        data_prefi
