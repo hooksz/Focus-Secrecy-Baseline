@@ -152,4 +152,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         data_prefix = f"{args.public_datasets_prefix}/leaf/data/"
         train_transform = transform
         test_transform = transform
-        data_p
+        data_path = f"{data_prefix}/femnist/"
+      
