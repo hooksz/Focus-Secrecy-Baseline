@@ -157,4 +157,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset = FEMNIST(f'{data_path}', args, dataset="test", transform=test_transform) 
 
         training_dataset.tokenizer = tokenizer
-        training_datase
+        training_dataset.transform = train_transform
+        test
