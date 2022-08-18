@@ -161,4 +161,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.tokenizer = tokenizer
         test_dataset.transform = test_transform
 
-    elif da
+    elif dataset == "20news":
+        data_path =
