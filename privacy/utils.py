@@ -162,4 +162,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.transform = test_transform
 
     elif dataset == "20news":
-        data_path = f'{args.public_datasets_prefix}/fedNLP/data
+        data_path = f'{args.public_datasets_prefix}/fedNLP/data_files/20news_data.h5'
+        parti
