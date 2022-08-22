@@ -163,4 +163,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
 
     elif dataset == "20news":
         data_path = f'{args.public_datasets_prefix}/fedNLP/data_files/20news_data.h5'
-        partition_path = f'{args.public_datasets_prefix}/fedNLP/partition_files/20news_parti
+        partition_path = f'{args.public_datasets_prefix}/fedNLP/partition_files/20news_partition.h5'
+        training_dataset = News2
