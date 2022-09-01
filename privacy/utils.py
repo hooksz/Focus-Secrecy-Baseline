@@ -165,4 +165,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         data_path = f'{args.public_datasets_prefix}/fedNLP/data_files/20news_data.h5'
         partition_path = f'{args.public_datasets_prefix}/fedNLP/partition_files/20news_partition.h5'
         training_dataset = News20(f'{data_path}', f'{partition_path}', args, dataset="train") 
-        test_dataset = News20(f'{data_path}', f'{partition_path}', args, dataset="tes
+        test_dataset = News20(f'{data_path}', f'{partition_path}', args, dataset="test") 
+        
+        training_dataset.tokenizer 
