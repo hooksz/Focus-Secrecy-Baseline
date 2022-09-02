@@ -167,4 +167,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset = News20(f'{data_path}', f'{partition_path}', args, dataset="train") 
         test_dataset = News20(f'{data_path}', f'{partition_path}', args, dataset="test") 
         
-        training_dataset.tokenizer 
+        training_dataset.tokenizer = tokenizer
+        training_dataset.transform = tr
