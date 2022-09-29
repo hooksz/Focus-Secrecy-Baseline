@@ -172,4 +172,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.tokenizer = tokenizer
         test_dataset.transform = transform
         training_dataset.max_length = 1900
-        test_dataset.max_len
+        test_dataset.max_length = 1900
+
+    elif dataset == "mrqa":
+        data_
