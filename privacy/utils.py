@@ -175,4 +175,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.max_length = 1900
 
     elif dataset == "mrqa":
-        data_path = f'{args.public_datasets_prefi
+        data_path = f'{args.public_datasets_prefix}/fedNLP/data_files/mrqa_data.h5'
+    
