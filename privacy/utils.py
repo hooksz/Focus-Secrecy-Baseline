@@ -187,4 +187,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset.max_length = 1900
         test_dataset.max_length = 1900
 
-    elif
+    elif hasattr(torchvision.datasets, dataset.upper()):
+   
