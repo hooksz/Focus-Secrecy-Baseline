@@ -184,4 +184,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset.transform = transform
         test_dataset.tokenizer = tokenizer
         test_dataset.transform = transform
-        training_dataset.max_len
+        training_dataset.max_length = 1900
+        test_dataset.max_length = 1900
+
+    elif
