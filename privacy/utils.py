@@ -190,4 +190,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     elif hasattr(torchvision.datasets, dataset.upper()):
         data_path = f"{args.public_datasets_prefix}"
         dataset_name = dataset.upper()
-        # set transformatio
+        # set transformation differently per dataset
+        if dataset_name in [
