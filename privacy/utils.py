@@ -192,4 +192,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         dataset_name = dataset.upper()
         # set transformation differently per dataset
         if dataset_name in ["CIFAR10"] and "clip" not in args.model:
-            transform = torchvision.t
+            transform = torchvision.transforms.Compose(
+                [
+  
