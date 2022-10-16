@@ -194,4 +194,4 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         if dataset_name in ["CIFAR10"] and "clip" not in args.model:
             transform = torchvision.transforms.Compose(
                 [
-  
+                    torchvision.transforms.ToTenso
