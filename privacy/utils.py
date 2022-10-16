@@ -198,4 +198,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
                     torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
                 ]
             )
-        elif dataset_name in ["MNIST"] and "clip" not 
+        elif dataset_name in ["MNIST"] and "clip" not in args.model:
+            transform = torch
