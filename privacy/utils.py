@@ -199,4 +199,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
                 ]
             )
         elif dataset_name in ["MNIST"] and "clip" not in args.model:
-            transform = torch
+            transform = torchvision.transforms.ToTensor()
+        
+     
