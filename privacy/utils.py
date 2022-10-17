@@ -202,4 +202,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             transform = torchvision.transforms.ToTensor()
         
         # prepare raw training & test datasets
-        training_dataset = torchvision.datasets.
+        training_dataset = torchvision.datasets.__dict__[dataset_name](
+            root=f"{data_p
