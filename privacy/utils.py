@@ -205,4 +205,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset = torchvision.datasets.__dict__[dataset_name](
             root=f"{data_path}/cifar10/",
             train=True,
-       
+            download=True,
+            transform=transfo
