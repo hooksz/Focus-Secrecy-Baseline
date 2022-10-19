@@ -206,4 +206,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             root=f"{data_path}/cifar10/",
             train=True,
             download=True,
-            transform=transfo
+            transform=transform
+        )
+        test_dataset = torchvisio
