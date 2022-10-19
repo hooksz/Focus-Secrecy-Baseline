@@ -203,4 +203,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         
         # prepare raw training & test datasets
         training_dataset = torchvision.datasets.__dict__[dataset_name](
-            root=f"{data_p
+            root=f"{data_path}/cifar10/",
+            train=True,
+       
