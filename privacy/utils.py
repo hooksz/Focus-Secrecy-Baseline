@@ -210,4 +210,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         )
         test_dataset = torchvision.datasets.__dict__[dataset_name](
             root=f"{data_path}/cifar10/",
-            train=F
+            train=False,
+            download=True,
+            tra
