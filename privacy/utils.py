@@ -212,4 +212,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             root=f"{data_path}/cifar10/",
             train=False,
             download=True,
-            tra
+            transform=transform
+        )
+
+        # unsqueeze c
