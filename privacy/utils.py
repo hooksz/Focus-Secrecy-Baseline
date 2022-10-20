@@ -208,4 +208,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             download=True,
             transform=transform
         )
-        test_dataset = torchvisio
+        test_dataset = torchvision.datasets.__dict__[dataset_name](
+            root=f
