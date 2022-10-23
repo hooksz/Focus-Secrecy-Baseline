@@ -215,4 +215,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             transform=transform
         )
 
-        # unsqueeze c
+        # unsqueeze channel dimension for grayscale image datasets
+        if train
