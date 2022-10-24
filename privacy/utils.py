@@ -216,4 +216,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         )
 
         # unsqueeze channel dimension for grayscale image datasets
-        if training_dataset.data.ndim == 3: # convert to NxHxW -> N
+        if training_dataset.data.ndim == 3: # convert to NxHxW -> NxHxWx1
+            training_dataset.
