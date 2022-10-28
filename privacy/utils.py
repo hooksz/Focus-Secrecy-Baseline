@@ -221,4 +221,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         num_categories = np.unique(training_dataset.targets).shape[0]
         
         if "ndarray" not in str(type(training_dataset.data)):
-            training_dataset.data = np.asarray(training_datas
+            training_dataset.data = np.asarray(training_dataset.data)
+        if "list" not in str(type(tr
