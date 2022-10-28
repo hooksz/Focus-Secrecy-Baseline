@@ -220,4 +220,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             training_dataset.data.unsqueeze_(3)
         num_categories = np.unique(training_dataset.targets).shape[0]
         
-        if "ndarray" not in 
+        if "ndarray" not in str(type(training_dataset.data)):
+            tra
