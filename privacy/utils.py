@@ -225,4 +225,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         if "list" not in str(type(training_dataset.targets)):
             training_dataset.targets = training_dataset.targets.tolist()
 
-        tr
+        training_dataset.tokenizer = tokenizer
+        trainin
