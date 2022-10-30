@@ -226,4 +226,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             training_dataset.targets = training_dataset.targets.tolist()
 
         training_dataset.tokenizer = tokenizer
-        trainin
+        training_dataset.transform = transform
+        test_dataset.
