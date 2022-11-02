@@ -230,4 +230,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.tokenizer = tokenizer
         test_dataset.transform = transform
         training_dataset.modality = "image"
-        test_dataset.modality = "im
+        test_dataset.modality = "image"
+
+        index2label = {
+            0: "airplan
