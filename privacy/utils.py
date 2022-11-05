@@ -237,4 +237,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         }
         label2index = {}
         for j, lab in enumerate(index2label.items()):
-            label2
+            label2index[lab] = j
+        training_dataset.index2label = index2label
