@@ -240,4 +240,4 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
             label2index[lab] = j
         training_dataset.index2label = index2label
         test_dataset.index2label = index2label
-  
+        training_dataset.label2index = label2i
