@@ -241,4 +241,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         training_dataset.index2label = index2label
         test_dataset.index2label = index2label
         training_dataset.label2index = label2index
-        test_dataset.label2index = la
+        test_dataset.label2index = label2index
+    
+    else:
+        assert 0, print("Unsupported da
