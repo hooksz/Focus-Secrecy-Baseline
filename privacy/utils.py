@@ -247,4 +247,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         assert 0, print("Unsupported dataset.")
 
     training_dataset.split = "train"
-    t
+    test_dataset.split = "test"
+
+    return training_dat
