@@ -244,4 +244,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
         test_dataset.label2index = label2index
     
     else:
-        assert 0, print("Unsupported da
+        assert 0, print("Unsupported dataset.")
+
+    training_dataset.split = "train"
+    t
