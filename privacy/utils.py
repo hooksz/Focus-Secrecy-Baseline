@@ -249,4 +249,6 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     training_dataset.split = "train"
     test_dataset.split = "test"
 
-    return training_dat
+    return training_dataset, test_dataset, training_dataset.transform
+
+
