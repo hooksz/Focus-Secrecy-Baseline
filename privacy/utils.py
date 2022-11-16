@@ -256,4 +256,5 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     Load the model
     Load the dataset
 """
-def i
+def initialize_run(args):
+    transform =
