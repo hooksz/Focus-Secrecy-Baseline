@@ -261,4 +261,6 @@ def initialize_run(args):
     tokenizer = None
     
     # get dataset and model
-    model, transform, tokenizer = get_model
+    model, transform, tokenizer = get_model(args)
+    print(f"Loaded model: {args.model}")
+   
