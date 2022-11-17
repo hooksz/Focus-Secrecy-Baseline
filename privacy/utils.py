@@ -260,4 +260,5 @@ def initialize_run(args):
     transform = None
     tokenizer = None
     
-    # get dataset and mode
+    # get dataset and model
+    model, transform, tokenizer = get_model
