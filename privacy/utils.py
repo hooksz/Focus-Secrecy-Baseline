@@ -263,4 +263,5 @@ def initialize_run(args):
     # get dataset and model
     model, transform, tokenizer = get_model(args)
     print(f"Loaded model: {args.model}")
-   
+    if model:
+        total_trainable_params = sum(p.numel()
