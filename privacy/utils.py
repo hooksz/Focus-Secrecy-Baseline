@@ -257,4 +257,7 @@ def get_dataset(args, split="", transform=None, tokenizer=None):
     Load the dataset
 """
 def initialize_run(args):
-    transform =
+    transform = None
+    tokenizer = None
+    
+    # get dataset and mode
