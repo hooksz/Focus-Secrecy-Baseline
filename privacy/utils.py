@@ -264,4 +264,5 @@ def initialize_run(args):
     model, transform, tokenizer = get_model(args)
     print(f"Loaded model: {args.model}")
     if model:
-        total_trainable_params = sum(p.numel() for p in model.parameters() if p.requir
+        total_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        total_params = sum(p.numel() fo
