@@ -266,4 +266,5 @@ def initialize_run(args):
     if model:
         total_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
         total_params = sum(p.numel() for p in model.parameters()) 
-        print("Total params ", total_params, " total traina
+        print("Total params ", total_params, " total trainable params ", total_trainable_params)
+   
