@@ -275,4 +275,5 @@ def initialize_run(args):
 
 def index_dataset(args, index_split="train", search_split="test"):
     train_data = get_dataset(args, split=index_split)
-    index
+    index_sents = []
+    for i, data in enumerate(train_dat
