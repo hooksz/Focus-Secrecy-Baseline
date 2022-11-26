@@ -273,4 +273,5 @@ def initialize_run(args):
     return training_dataset, test_dataset, model
 
 
-def index_dataset(args, index_split=
+def index_dataset(args, index_split="train", search_split="test"):
+    trai
