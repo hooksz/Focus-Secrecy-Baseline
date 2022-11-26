@@ -268,4 +268,6 @@ def initialize_run(args):
         total_params = sum(p.numel() for p in model.parameters()) 
         print("Total params ", total_params, " total trainable params ", total_trainable_params)
     training_dataset, test_dataset, transform = get_dataset(args, transform=transform, tokenizer=tokenizer)  
-    num_categories = np.uniq
+    num_categories = np.unique(training_dataset.targets).shape[0]   
+
+   
