@@ -279,3 +279,5 @@ def index_dataset(args, index_split="train", search_split="test"):
     for i, data in enumerate(train_data):
         entry = {
             "text": data[0],
+            "label_no": data[1],
+       
