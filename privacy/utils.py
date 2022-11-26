@@ -280,4 +280,6 @@ def index_dataset(args, index_split="train", search_split="test"):
         entry = {
             "text": data[0],
             "label_no": data[1],
-       
+            "ex_idx": data[-1]
+        }
+        i
