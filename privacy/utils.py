@@ -270,4 +270,4 @@ def initialize_run(args):
     training_dataset, test_dataset, transform = get_dataset(args, transform=transform, tokenizer=tokenizer)  
     num_categories = np.unique(training_dataset.targets).shape[0]   
 
-   
+    return training_dataset, test_dataset, mod
