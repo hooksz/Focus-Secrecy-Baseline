@@ -274,4 +274,5 @@ def initialize_run(args):
 
 
 def index_dataset(args, index_split="train", search_split="test"):
-    trai
+    train_data = get_dataset(args, split=index_split)
+    index
