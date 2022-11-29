@@ -283,4 +283,6 @@ def index_dataset(args, index_split="train", search_split="test"):
             "ex_idx": data[-1]
         }
         index_sents.append(entry)
-    eval_data = get_dataset(args, split=search
+    eval_data = get_dataset(args, split=search_split)
+    eval_sents = []
+    for i, data in en
