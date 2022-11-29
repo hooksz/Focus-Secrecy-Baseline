@@ -293,4 +293,6 @@ def index_dataset(args, index_split="train", search_split="test"):
         }
         eval_sents.append(entry)
 
-    retrieval_model = SentenceTransformer(("multi-qa-mp
+    retrieval_model = SentenceTransformer(("multi-qa-mpnet-base-dot-v1"))
+
+    print("Indexing ..
