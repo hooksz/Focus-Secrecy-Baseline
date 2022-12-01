@@ -296,4 +296,6 @@ def index_dataset(args, index_split="train", search_split="test"):
     retrieval_model = SentenceTransformer(("multi-qa-mpnet-base-dot-v1"))
 
     print("Indexing ...")
-    corpus, index = index_trainset(index_se
+    corpus, index = index_trainset(index_sents, retrieval_model, args)
+
+    print("Searching ..
