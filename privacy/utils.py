@@ -300,4 +300,7 @@ def index_dataset(args, index_split="train", search_split="test"):
 
     print("Searching ...")
     results = search_trainset(eval_sents, index, corpus, top_k=1)
-    preds, results = compute_pr
+    preds, results = compute_preds(results, corpus)
+
+    return preds, results  
+
