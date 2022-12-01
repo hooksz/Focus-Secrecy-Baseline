@@ -304,3 +304,5 @@ def index_dataset(args, index_split="train", search_split="test"):
 
     return preds, results  
 
+
+def get_zeroshot_predictions(key_embeddings,
