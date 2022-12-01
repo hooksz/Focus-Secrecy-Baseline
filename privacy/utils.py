@@ -299,4 +299,5 @@ def index_dataset(args, index_split="train", search_split="test"):
     corpus, index = index_trainset(index_sents, retrieval_model, args)
 
     print("Searching ...")
-    results = search_trainset(eval_sents, i
+    results = search_trainset(eval_sents, index, corpus, top_k=1)
+    preds, results = compute_pr
