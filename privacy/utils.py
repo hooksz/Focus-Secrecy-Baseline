@@ -306,4 +306,6 @@ def index_dataset(args, index_split="train", search_split="test"):
 
 
 def get_zeroshot_predictions(key_embeddings, 
-                             query_embeddings
+                             query_embeddings,
+                             temperature=100.,
+        
