@@ -309,4 +309,5 @@ def get_zeroshot_predictions(key_embeddings,
                              query_embeddings,
                              temperature=100.,
                              numpy=True,
-             
+                             base_model=None,
+          
