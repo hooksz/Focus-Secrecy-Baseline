@@ -312,4 +312,5 @@ def get_zeroshot_predictions(key_embeddings,
                              base_model=None,
                              normalize_query=False):
     
-    key_embeddings = torch.from_numpy(
+    key_embeddings = torch.from_numpy(key_embeddings)
+    query_embeddings 
