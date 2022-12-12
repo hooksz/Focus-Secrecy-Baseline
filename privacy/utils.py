@@ -317,4 +317,6 @@ def get_zeroshot_predictions(key_embeddings,
 
     with torch.no_grad():
         _key_embeddings = (key_embeddings / 
-                           key_embeddings.norm(dim=-1, keepd
+                           key_embeddings.norm(dim=-1, keepdim=True))
+        if normalize_query is True:
+       
