@@ -320,4 +320,6 @@ def get_zeroshot_predictions(key_embeddings,
                            key_embeddings.norm(dim=-1, keepdim=True))
         if normalize_query is True:
             _query_embeddings = (query_embeddings / 
-                                 query_embeddings.norm(dim
+                                 query_embeddings.norm(dim=-1, keepdim=True))
+        else:
+            
