@@ -325,4 +325,5 @@ def get_zeroshot_predictions(key_embeddings,
             _query_embeddings = query_embeddings
         
         cross = _key_embeddings @ _query_embeddings.T
-        probs = (tem
+        probs = (temperature * cross).softmax(dim=-1)
+        _, predicted = 
