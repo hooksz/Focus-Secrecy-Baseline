@@ -326,4 +326,6 @@ def get_zeroshot_predictions(key_embeddings,
         
         cross = _key_embeddings @ _query_embeddings.T
         probs = (temperature * cross).softmax(dim=-1)
-        _, predicted = 
+        _, predicted = torch.max(probs.data, 1)
+
+    return predict
