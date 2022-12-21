@@ -328,4 +328,5 @@ def get_zeroshot_predictions(key_embeddings,
         probs = (temperature * cross).softmax(dim=-1)
         _, predicted = torch.max(probs.data, 1)
 
-    return predict
+    return predicted.cpu().numpy()
+
