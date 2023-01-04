@@ -5,4 +5,4 @@ python -m privacy.main \
     --split test  \
     --use_gpu 1 \
     --seed 0 \
-    --clip_metho
+    --clip_method zeroshot
