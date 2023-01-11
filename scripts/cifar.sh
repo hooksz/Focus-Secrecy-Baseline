@@ -3,4 +3,6 @@ python -m privacy.main \
     --model clip32B \
     --paradigm similarity \
     --split test \
-    --see
+    --seed 0 \
+    --use_gpu 1 \
+    --clip_method zer
