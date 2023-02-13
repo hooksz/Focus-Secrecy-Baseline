@@ -8,3 +8,5 @@ python -m privacy.main \
     --seed 0 
 
 
+# Run zero-shot with GPT
+for MODEL in g
