@@ -9,4 +9,6 @@ python -m privacy.main \
 
 
 # Run zero-shot with GPT
-for MODEL in g
+for MODEL in gpt125m gpt1.3 gpt2.7;  
+do
+    for NUM in
