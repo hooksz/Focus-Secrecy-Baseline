@@ -11,4 +11,7 @@ python -m privacy.main \
 # Run zero-shot with GPT
 for MODEL in gpt125m gpt1.3 gpt2.7;  
 do
-    for NUM in
+    for NUM in 0; 
+    do
+        BATCH_SIZE=4
+        if [[ $M
