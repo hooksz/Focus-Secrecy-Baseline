@@ -15,4 +15,5 @@ do
     do
         BATCH_SIZE=4
         if [[ $MODEL == "gpt1.3" ]]; then
-            BATC
+            BATCH_SIZE=16
+        elif [[ $MODEL == "gpt2
