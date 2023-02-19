@@ -14,4 +14,5 @@ do
     for NUM in 0; 
     do
         BATCH_SIZE=4
-        if [[ $M
+        if [[ $MODEL == "gpt1.3" ]]; then
+            BATC
