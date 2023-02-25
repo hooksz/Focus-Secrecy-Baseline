@@ -22,4 +22,5 @@ do
             BATCH_SIZE=32
         fi
         
-        echo "Mo
+        echo "Model ${MODEL}" 
+        echo "Batch Size $
