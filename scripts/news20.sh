@@ -23,4 +23,5 @@ do
         fi
         
         echo "Model ${MODEL}" 
-        echo "Batch Size $
+        echo "Batch Size ${BATCH_SIZE}" 
+        echo "Num in context 
