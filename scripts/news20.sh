@@ -27,4 +27,6 @@ do
         echo "Num in context ${NUM}" 
         python -m privacy.main \
             --dataset 20news \
-            --model ${MODEL} 
+            --model ${MODEL} \
+            --paradigm prompt \
+            --spli
