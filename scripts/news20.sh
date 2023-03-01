@@ -29,4 +29,6 @@ do
             --dataset 20news \
             --model ${MODEL} \
             --paradigm prompt \
-            --spli
+            --split test \
+            --batch_size ${BATCH_SIZE} \
+   
