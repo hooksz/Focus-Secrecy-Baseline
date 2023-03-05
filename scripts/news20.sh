@@ -34,4 +34,8 @@ do
             --use_gpu 1 \
             --seed 0 \
             --max_sequence_length 1800 
-    
+    done
+done
+
+
+# Command for GPT OpenA
