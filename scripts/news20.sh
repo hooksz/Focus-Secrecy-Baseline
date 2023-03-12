@@ -40,4 +40,6 @@ done
 
 # Command for GPT OpenAI API Inference 
 python -m privacy.main \
-    --data
+    --dataset 20news \
+    --model gpt6.7 \
+    --paradig
