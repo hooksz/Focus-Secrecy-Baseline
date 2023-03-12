@@ -42,4 +42,6 @@ done
 python -m privacy.main \
     --dataset 20news \
     --model gpt6.7 \
-    --paradig
+    --paradigm prompt \
+    --split test \
+    --batch_
