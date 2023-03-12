@@ -44,4 +44,6 @@ python -m privacy.main \
     --model gpt6.7 \
     --paradigm prompt \
     --split test \
-    --batch_
+    --batch_size 1 \
+    --seed 0 \
+    --openai_key "fill in"
