@@ -4,4 +4,5 @@ do
     for NUM in 3 5; 
     do
         if [[ $MODEL == "gpt1.3" ]]; then
-            BAT
+            BATCH_SIZE=64
+        elif [[ $MODEL == "gpt125m" ]]; then 
