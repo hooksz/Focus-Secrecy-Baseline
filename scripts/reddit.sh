@@ -12,4 +12,5 @@ do
         fi
         
         echo "Model ${MODEL}" 
-     
+        echo "Batch Size ${BATCH_SIZE}" 
+        echo "
