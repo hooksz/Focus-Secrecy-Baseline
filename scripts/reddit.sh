@@ -13,4 +13,6 @@ do
         
         echo "Model ${MODEL}" 
         echo "Batch Size ${BATCH_SIZE}" 
-        echo "
+        echo "Num in context ${NUM}" 
+        python -m privacy.main \
+   
