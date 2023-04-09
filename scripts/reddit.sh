@@ -15,4 +15,5 @@ do
         echo "Batch Size ${BATCH_SIZE}" 
         echo "Num in context ${NUM}" 
         python -m privacy.main \
-   
+            --dataset reddit \
+            -
