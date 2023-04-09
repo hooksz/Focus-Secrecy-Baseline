@@ -17,4 +17,6 @@ do
         python -m privacy.main \
             --dataset reddit \
             --model ${MODEL} \
-            --paradigm prompt
+            --paradigm prompt \
+            --split test \
+         
