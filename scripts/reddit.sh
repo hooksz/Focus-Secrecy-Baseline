@@ -19,4 +19,5 @@ do
             --model ${MODEL} \
             --paradigm prompt \
             --split test \
-         
+            --batch_size ${BATCH_SIZE} \
+            --use_
