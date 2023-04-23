@@ -25,4 +25,8 @@ do
             --max_sequence_length 324 \
             --prompt_choice random_incontext \
             --num_incontext ${NUM}
-   
+    done
+done
+
+
+# Command for GPT Variations with 
