@@ -29,4 +29,5 @@ do
 done
 
 
-# Command for GPT Variations with 
+# Command for GPT Variations with "No User Privacy" In context examples
+for MODEL in gpt2.7
