@@ -38,4 +38,5 @@ do
             BATCH_SIZE=64
         elif [[ $MODEL == "gpt125m" ]]; then 
             BATCH_SIZE=128
-        
+        elif [[ $MODEL == "gpt2.7" ]]; then 
+            BATC
