@@ -43,4 +43,5 @@ do
         fi
         
         echo "Model ${MODEL}" 
-        echo "Batch Size ${BATCH_SIZE}"
+        echo "Batch Size ${BATCH_SIZE}" 
+        echo "Num in context ${NUM}" 
