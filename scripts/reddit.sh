@@ -49,4 +49,5 @@ do
             --dataset reddit \
             --model ${MODEL} \
             --paradigm prompt \
-            --
+            --split test \
+            --batch_size ${BATCH_SI
