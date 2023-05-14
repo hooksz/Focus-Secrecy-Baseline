@@ -50,4 +50,6 @@ do
             --model ${MODEL} \
             --paradigm prompt \
             --split test \
-            --batch_size ${BATCH_SI
+            --batch_size ${BATCH_SIZE} \
+            --use_gpu 1 \
+          
