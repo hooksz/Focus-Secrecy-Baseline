@@ -60,4 +60,6 @@ do
 done
 
 
-# Command for GPT
+# Command for GPT OpenAI API Inference 
+python -m privacy.main \
+    -
