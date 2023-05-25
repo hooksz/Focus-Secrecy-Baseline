@@ -64,4 +64,6 @@ done
 python -m privacy.main \
     --dataset reddit \
     --model gpt6.7 \
-    --p
+    --paradigm prompt \
+    --split test \
+    --
