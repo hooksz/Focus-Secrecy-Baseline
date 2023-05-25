@@ -66,4 +66,6 @@ python -m privacy.main \
     --model gpt6.7 \
     --paradigm prompt \
     --split test \
-    --
+    --batch_size 1 \
+    --seed 0 \
+    --prompt_ch
