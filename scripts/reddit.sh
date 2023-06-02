@@ -68,4 +68,5 @@ python -m privacy.main \
     --split test \
     --batch_size 1 \
     --seed 0 \
-    --prompt_ch
+    --prompt_choice random_incontext \
+    --num_inc
