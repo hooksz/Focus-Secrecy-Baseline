@@ -7,4 +7,7 @@ python -m privacy.main \
     --batch_size 4 \
     --use_gpu 1 \
     --seed 0 \
- 
+    --client_subsample 0.025
+
+
+# Command for Bi-En
