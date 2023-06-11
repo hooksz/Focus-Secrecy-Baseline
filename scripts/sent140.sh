@@ -2,4 +2,6 @@
 python -m privacy.main \
     --dataset sent140 \
     --model t03b \
-    --paradigm 
+    --paradigm prompt \
+    --split test \
+    --batch_size
