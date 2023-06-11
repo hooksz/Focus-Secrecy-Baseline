@@ -4,4 +4,7 @@ python -m privacy.main \
     --model t03b \
     --paradigm prompt \
     --split test \
-    --batch_size
+    --batch_size 4 \
+    --use_gpu 1 \
+    --seed 0 \
+ 
