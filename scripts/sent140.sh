@@ -10,4 +10,6 @@ python -m privacy.main \
     --client_subsample 0.025
 
 
-# Command for Bi-En
+# Command for Bi-Encoder
+python -m privacy.main \
+    --dataset sent140 
