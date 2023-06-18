@@ -12,4 +12,6 @@ python -m privacy.main \
 
 # Command for Bi-Encoder
 python -m privacy.main \
-    --dataset sent140 
+    --dataset sent140 \
+    --model dpr \
+    --paradigm similar
