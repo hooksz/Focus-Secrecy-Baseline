@@ -14,4 +14,7 @@ python -m privacy.main \
 python -m privacy.main \
     --dataset sent140 \
     --model dpr \
-    --paradigm similar
+    --paradigm similarity \
+    --use_gpu 1 \
+    --seed 0 \
+  
