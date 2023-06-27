@@ -17,4 +17,5 @@ python -m privacy.main \
     --paradigm similarity \
     --use_gpu 1 \
     --seed 0 \
-  
+    --client_subsample 0.025
+    --split test
