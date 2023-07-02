@@ -21,4 +21,5 @@ python -m privacy.main \
     --split test
 
 
-# Command for GPT Variations with "User Privacy" 
+# Command for GPT Variations with "User Privacy" In context examples
+for MODEL in gpt2.7 gp
