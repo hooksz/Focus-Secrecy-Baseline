@@ -19,3 +19,6 @@ python -m privacy.main \
     --seed 0 \
     --client_subsample 0.025
     --split test
+
+
+# Command for GPT Variations with "User Privacy" 
