@@ -28,4 +28,5 @@ do
     do
         if [[ $MODEL == "gpt1.3" ]]; then
             BATCH_SIZE=32
-        elif [[ $MODEL 
+        elif [[ $MODEL == "gpt125m" ]]; then 
+            BATCH_SIZE=
