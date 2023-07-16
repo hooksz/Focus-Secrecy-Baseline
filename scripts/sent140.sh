@@ -32,4 +32,7 @@ do
             BATCH_SIZE=72
         elif [[ $MODEL == "gpt2.7" ]]; then 
             BATCH_SIZE=24
-        f
+        fi
+        
+        echo "Model ${MODEL}" 
+        echo 
