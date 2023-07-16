@@ -35,4 +35,5 @@ do
         fi
         
         echo "Model ${MODEL}" 
-        echo 
+        echo "Batch Size ${BATCH_SIZE}" 
+        echo "Num i
