@@ -41,3 +41,5 @@ do
             --dataset sent140 \
             --model ${MODEL} \
             --paradigm prompt \
+            --split test \
+            --bat
