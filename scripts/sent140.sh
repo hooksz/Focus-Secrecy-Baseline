@@ -43,4 +43,5 @@ do
             --paradigm prompt \
             --split test \
             --batch_size ${BATCH_SIZE} \
-            --cli
+            --client_subsample 0.025 \
+            --use_gp
