@@ -42,4 +42,5 @@ do
             --model ${MODEL} \
             --paradigm prompt \
             --split test \
-            --bat
+            --batch_size ${BATCH_SIZE} \
+            --cli
