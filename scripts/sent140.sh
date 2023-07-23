@@ -39,4 +39,5 @@ do
         echo "Num in context ${NUM}" 
         python -m privacy.main \
             --dataset sent140 \
-            --
+            --model ${MODEL} \
+            --paradigm prompt \
