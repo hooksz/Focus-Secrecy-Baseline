@@ -44,4 +44,6 @@ do
             --split test \
             --batch_size ${BATCH_SIZE} \
             --client_subsample 0.025 \
-            --use_gp
+            --use_gpu 1 \
+            --seed 0 \
+            --max_s
