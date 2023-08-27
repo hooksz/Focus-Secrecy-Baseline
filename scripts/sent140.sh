@@ -66,4 +66,5 @@ do
             BATCH_SIZE=24
         fi
         
- 
+        echo "Model ${MODEL}" 
+        echo
