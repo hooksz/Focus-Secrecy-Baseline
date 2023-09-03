@@ -72,4 +72,5 @@ do
         python -m privacy.main \
             --dataset sent140 \
             --model ${MODEL} \
-            --p
+            --paradigm prompt \
+            --split test \
