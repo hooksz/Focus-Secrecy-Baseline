@@ -74,3 +74,4 @@ do
             --model ${MODEL} \
             --paradigm prompt \
             --split test \
+            --batch_size ${BA
