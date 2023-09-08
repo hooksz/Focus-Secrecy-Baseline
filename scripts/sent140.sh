@@ -74,4 +74,6 @@ do
             --model ${MODEL} \
             --paradigm prompt \
             --split test \
-            --batch_size ${BA
+            --batch_size ${BATCH_SIZE} \
+            --client_subsample 0.025 \
+ 
