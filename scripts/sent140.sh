@@ -78,3 +78,5 @@ do
             --client_subsample 0.025 \
             --use_gpu 1 \
             --seed 0 \
+            --max_sequence_length 512 \
+          
