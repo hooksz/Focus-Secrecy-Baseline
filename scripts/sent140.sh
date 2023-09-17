@@ -79,4 +79,7 @@ do
             --use_gpu 1 \
             --seed 0 \
             --max_sequence_length 512 \
-            --prompt_choice random_incontext_nopri
+            --prompt_choice random_incontext_noprivacy \
+            --num_incontext ${NUM}
+    done
+done
