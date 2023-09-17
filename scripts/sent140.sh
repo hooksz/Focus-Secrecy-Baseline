@@ -83,3 +83,6 @@ do
             --num_incontext ${NUM}
     done
 done
+
+
+# Command for GPT OpenAI API 
