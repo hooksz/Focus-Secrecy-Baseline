@@ -87,4 +87,6 @@ done
 
 # Command for GPT OpenAI API Inference 
 python -m privacy.main \
-    --data
+    --dataset sent140 \
+    --model gpt6.7 \
+    --paradigm prompt 
