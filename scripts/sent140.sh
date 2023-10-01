@@ -89,4 +89,7 @@ done
 python -m privacy.main \
     --dataset sent140 \
     --model gpt6.7 \
-    --paradigm prompt 
+    --paradigm prompt \
+    --split test \
+    --batch_size 1 \
+    --
