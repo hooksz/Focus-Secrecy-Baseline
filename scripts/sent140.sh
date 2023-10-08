@@ -92,4 +92,6 @@ python -m privacy.main \
     --paradigm prompt \
     --split test \
     --batch_size 1 \
+    --client_subsample 0.025 \
+    --seed 0 \
     --
