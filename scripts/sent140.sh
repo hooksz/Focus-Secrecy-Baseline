@@ -95,4 +95,5 @@ python -m privacy.main \
     --client_subsample 0.025 \
     --seed 0 \
     --prompt_choice random_incontext \
-    --num_incont
+    --num_incontext 3 \
+    --openai_key "fill in"
