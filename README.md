@@ -4,4 +4,4 @@ This repository explores the baseline of using in-context learning for personal 
 
 - Do we see further personalization with more in-context examples and longer contexts? 
 - Can we understand the limits of this baseline in a more principled manner? Are the tasks we've evaluated on so far too similar to the pretraining distribution? [Maybe we should construct new privacy benchmarks!](https://arxiv.org/abs/2212.06470)
-- Can we enable better in-context lea
+- Can we enable better in-context learning quality in smaller & open-source models? (Chec
