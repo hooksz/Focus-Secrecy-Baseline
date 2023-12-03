@@ -11,4 +11,4 @@ This repository explores the baseline of using in-context learning for personal 
 
 ## Setup
 
-Use the following commands to clone and install this p
+Use the following commands to clone and install this package. We highly recommend you use con
