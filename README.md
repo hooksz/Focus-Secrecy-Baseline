@@ -7,4 +7,8 @@ This repository explores the baseline of using in-context learning for personal 
 - Can we enable better in-context learning quality in smaller & open-source models? (Checkout recent work: [Ask Me Anything](https://arxiv.org/abs/2210.02441))
 - Other ways of using the FMs -- is it better to generate synthetic data with the FMs and then train locally?
 
-<p align="center"><img
+<p align="center"><img width="85%" src="imgs/main_figure.png" /></p>
+
+## Setup
+
+Use t
