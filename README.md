@@ -15,4 +15,7 @@ Use the following commands to clone and install this package. We highly recommen
 
 ```
 # environment
-conda create -
+conda create -n py37 python=3.7
+conda activate py37
+
+# ins
