@@ -19,4 +19,6 @@ conda create -n py37 python=3.7
 conda activate py37
 
 # installations
-git clone git@github.com:hooksz/Focus-Secrecy-B
+git clone git@github.com:hooksz/Focus-Secrecy-Baseline.git
+cd Focus-Secrecy-Baseline
+pip inst
