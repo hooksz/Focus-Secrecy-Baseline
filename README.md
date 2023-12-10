@@ -18,4 +18,5 @@ Use the following commands to clone and install this package. We highly recommen
 conda create -n py37 python=3.7
 conda activate py37
 
-# ins
+# installations
+git clone git@github.com:hooksz/Focus-Secrecy-B
