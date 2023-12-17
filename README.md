@@ -21,4 +21,5 @@ conda activate py37
 # installations
 git clone git@github.com:hooksz/Focus-Secrecy-Baseline.git
 cd Focus-Secrecy-Baseline
-pip inst
+pip install -e .
+pip3 install torch torchvision torch
