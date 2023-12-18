@@ -22,4 +22,8 @@ conda activate py37
 git clone git@github.com:hooksz/Focus-Secrecy-Baseline.git
 cd Focus-Secrecy-Baseline
 pip install -e .
-pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.or
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+
+cd benchmarks/leaf
+git submodule init
+git s
