@@ -26,4 +26,7 @@ pip3 install torch torchvision torchaudio --extra-index-url https://download.pyt
 
 cd benchmarks/leaf
 git submodule init
-git s
+git submodule update
+```
+
+If you want to run inference 
