@@ -29,4 +29,4 @@ git submodule init
 git submodule update
 ```
 
-If you want to run inference 
+If you want to run inference with the API models, first obtain your OpenAI infe
