@@ -34,4 +34,6 @@ If you want to run inference with the API models, first obtain your OpenAI infer
 export OPENAI_API_KEY="<YOUR API KEY>"
 ```
 
-## Ob
+## Obtain the datasets
+
+Download benchmark datasets to the ``Foc
