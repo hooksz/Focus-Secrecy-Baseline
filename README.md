@@ -36,4 +36,6 @@ export OPENAI_API_KEY="<YOUR API KEY>"
 
 ## Obtain the datasets
 
-Download benchmark datasets to the ``Foc
+Download benchmark datasets to the ``Focus-Secrecy-Baseline/benchmarks/'' directory
+```
+c
