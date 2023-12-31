@@ -31,4 +31,7 @@ git submodule update
 
 If you want to run inference with the API models, first obtain your OpenAI inference API key here [OpenAI API](https://openai.com/api/). Then set the environment variables:
 ```
-export O
+export OPENAI_API_KEY="<YOUR API KEY>"
+```
+
+## Ob
