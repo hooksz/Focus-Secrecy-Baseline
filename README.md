@@ -38,4 +38,8 @@ export OPENAI_API_KEY="<YOUR API KEY>"
 
 Download benchmark datasets to the ``Focus-Secrecy-Baseline/benchmarks/'' directory
 ```
-c
+cd benchmarks/
+bash download_data.sh
+```
+
+The LE
