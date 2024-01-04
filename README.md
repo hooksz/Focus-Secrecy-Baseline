@@ -42,4 +42,4 @@ cd benchmarks/
 bash download_data.sh
 ```
 
-The LE
+The LEAF Federated Learning benchmark suite prov
