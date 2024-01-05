@@ -42,4 +42,4 @@ cd benchmarks/
 bash download_data.sh
 ```
 
-The LEAF Federated Learning benchmark suite prov
+The LEAF Federated Learning benchmark suite provides: Sent140, Reddit, FEMNIST, and CELEB-A. 
