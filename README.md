@@ -43,4 +43,5 @@ bash download_data.sh
 ```
 
 The LEAF Federated Learning benchmark suite provides: Sent140, Reddit, FEMNIST, and CELEB-A. The FedNLP suite provides 20News and MRQA. The FedML suite provides CIFAR-10.
-- Sent140, FEMNIST, CelebA, CIFAR-10, and 20News benchmarks are downloaded via the provided download sc
+- Sent140, FEMNIST, CelebA, CIFAR-10, and 20News benchmarks are downloaded via the provided download script. 
+- [Reddit] Go to benchmarks/leaf/data/reddi
