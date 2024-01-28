@@ -49,4 +49,6 @@ The LEAF Federated Learning benchmark suite provides: Sent140, Reddit, FEMNIST, 
 
 ## Run the code
 
-The ``Focus-Secrecy-Baseline/scripts/`` directory prov
+The ``Focus-Secrecy-Baseline/scripts/`` directory provides scripts to run experiments for each benchmark.
+
+Fo
