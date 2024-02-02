@@ -54,3 +54,7 @@ The ``Focus-Secrecy-Baseline/scripts/`` directory provides scripts to run experi
 For example:
 ```
 bash scripts/cifar.sh
+bash scripts/sent140.sh
+```
+
+We include exampl
