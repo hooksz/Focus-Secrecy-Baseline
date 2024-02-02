@@ -57,4 +57,4 @@ bash scripts/cifar.sh
 bash scripts/sent140.sh
 ```
 
-We include exampl
+We include examples for running inference with the API in the script fi
