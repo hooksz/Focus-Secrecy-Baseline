@@ -60,4 +60,6 @@ bash scripts/sent140.sh
 We include examples for running inference with the API in the script files. Note that this requires providing the ```openai_key``` command line argument.
 
 ## Citation
-Please use the following
+Please use the following Bibtex for this work:
+```
+@misc{arora
