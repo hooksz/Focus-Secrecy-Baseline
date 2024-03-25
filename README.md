@@ -62,4 +62,5 @@ We include examples for running inference with the API in the script files. Note
 ## Citation
 Please use the following Bibtex for this work:
 ```
-@misc{arora
+@misc{arora2022focus,
+      title={Can Founda
