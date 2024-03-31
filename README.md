@@ -67,4 +67,4 @@ Please use the following Bibtex for this work:
       author={Simran Arora and Christopher Ré},
       year={2022},
       url={https://arxiv.org/abs/2205.13722},
-      journal={The Fourth AAA
+      journal={The Fourth AAAI Workshop on Privacy-Preserving Artificial Intellige
