@@ -72,4 +72,4 @@ Please use the following Bibtex for this work:
 }
 ```
 
-Contribution is welcome. Do not hesitate to reach out
+Contribution is welcome. Do not hesitate to reach out via the issues or direct email to the operators.
